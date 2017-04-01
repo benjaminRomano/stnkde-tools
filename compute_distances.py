@@ -12,11 +12,13 @@ def main(host, dbname, user, password, lixel_length, srid, search_bandwidth):
     print("Generating midpoints...")
     generate_midpoints(cur, lixel_length, srid)
 
-    print("Computing lixel counts")
+    print("Computing lixel counts...")
     compute_lixel_counts(cur, lixel_length)
 
     print("Computing lixel distances...")
     compute_lixel_distances(cur, connection_string, lixel_length, search_bandwidth)
+
+    cur.execute("DROP TABLE lixel_%(lixel_length)s_midpoints", {"lixel_length": lixel_length})
 
 def compute_lixel_distances_bucket(connection_string, bucket, lixel_length, search_bandwidth):
     conn = psycopg2.connect(connection_string)
@@ -25,12 +27,12 @@ def compute_lixel_distances_bucket(connection_string, bucket, lixel_length, sear
 
     for edge_id in bucket:
         cur.execute("""
-            INSERT into lixel_%(lixel_length)s_distances_%(search_bandwidth)s (source_edge, target_edge, distance)
+            INSERT into lixel_%(lixel_length)s_%(search_bandwidth)s_distances (source_edge, target_edge, distance)
             SELECT LEAST(%(edge_id)s, edge), GREATEST(%(edge_id)s, edge), agg_cost FROM pgr_withPointsDD(
                 'SELECT edge_id as id, start_node as source, end_node as target, ST_LENGTH(geom) as cost FROM network_topo_%(lixel_length)s.edge_data
-                WHERE ST_DISTANCE((SELECT midpoint from edge_midpoints_%(lixel_length)s as e where e.edge_id = %(edge_id)s), geom) <= %(search_bandwidth)s * 10',
-                'SELECT e1.edge_id as pid, e1.edge_id, cast(0.5 as double precision) as fraction from edge_midpoints_%(lixel_length)s as e1
-                    WHERE ST_DISTANCE((SELECT e2.midpoint from edge_midpoints_%(lixel_length)s as e2 where e2.edge_id = %(edge_id)s), e1.midpoint) <= %(search_bandwidth)s',
+                WHERE ST_DISTANCE((SELECT midpoint from lixel_%(lixel_length)s_midpoints as e where e.edge_id = %(edge_id)s), geom) <= %(search_bandwidth)s * 10',
+                'SELECT e1.edge_id as pid, e1.edge_id, cast(0.5 as double precision) as fraction from lixel_%(lixel_length)s_midpoints as e1
+                    WHERE ST_DISTANCE((SELECT e2.midpoint from lixel_%(lixel_length)s_midpoints as e2 where e2.edge_id = %(edge_id)s), e1.midpoint) <= %(search_bandwidth)s',
                 -%(edge_id)s, %(search_bandwidth)s, directed:=false, details:=true
             ) WHERE node < 0 AND edge != -1
             on conflict (source_edge, target_edge) DO NOTHING
@@ -41,13 +43,13 @@ def compute_lixel_distances_bucket(connection_string, bucket, lixel_length, sear
 
 def compute_lixel_distances(cur, connection_string, lixel_length, search_bandwidth):
     cur.execute("""
-        CREATE TABLE public.lixel_%(lixel_length)s_distances_%(search_bandwidth)s(
+        CREATE TABLE public.lixel_%(lixel_length)s_%(search_bandwidth)s_distances(
         id serial NOT NULL,
         source_edge integer NOT NULL,
         target_edge integer NOT NULL,
         distance double precision,
-        CONSTRAINT lixel_%(lixel_length)s_distances_%(search_bandwidth)s_pkey PRIMARY KEY (id),
-        CONSTRAINT lixel_%(lixel_length)s_distances_%(search_bandwidth)s_source_target_unique_constraint UNIQUE (source_edge, target_edge))
+        CONSTRAINT lixel_%(lixel_length)s_%(search_bandwidth)s_distances_pkey PRIMARY KEY (id),
+        CONSTRAINT lixel_%(lixel_length)s_%(search_bandwidth)s_distances_source_target_unique_constraint UNIQUE (source_edge, target_edge))
     """, {"lixel_length": lixel_length, "search_bandwidth": search_bandwidth})
 
     cur.execute("SELECT edge_id FROM lixel_%s_count", (lixel_length,))
@@ -61,17 +63,17 @@ def compute_lixel_distances(cur, connection_string, lixel_length, search_bandwid
 
 def generate_midpoints(cur, lixel_length, srid):
     cur.execute("""
-    CREATE TABLE public.edge_midpoints_%(lixel_length)s(
+    CREATE TABLE public.lixel_%(lixel_length)s_midpoints(
         edge_id integer NOT NULL,
         midpoint geometry(Point,%(srid)s),
-        CONSTRAINT edge_midpoints_%(lixel_length)s_primary_key PRIMARY KEY (edge_id)
+        CONSTRAINT lixel_%(lixel_length)s_midpoints_primary_key PRIMARY KEY (edge_id)
     );
 
-    CREATE INDEX edge_midpoints_%(lixel_length)s_spatial_index
-        ON public.edge_midpoints_%(lixel_length)s USING gist (midpoint);
+    CREATE INDEX lixel_%(lixel_length)s_midpoints_spatial_index
+        ON public.lixel_%(lixel_length)s_midpoints USING gist (midpoint);
     """, {"lixel_length": lixel_length, "srid": srid})
 
-    cur.execute("""INSERT INTO edge_midpoints_%(lixel_length)s SELECT edge_id, ST_LineInterpolatePoint(geom, 0.5) FROM network_topo_%(lixel_length)s.edge_data""", {"lixel_length": lixel_length})
+    cur.execute("""INSERT INTO lixel_%(lixel_length)s_midpoints SELECT edge_id, ST_LineInterpolatePoint(geom, 0.5) FROM network_topo_%(lixel_length)s.edge_data""", {"lixel_length": lixel_length})
 
 def compute_lixel_counts(cur, lixel_length):
     cur.execute("""
