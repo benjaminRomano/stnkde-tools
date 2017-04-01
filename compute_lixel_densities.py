@@ -67,26 +67,26 @@ def compute_lixel_densities(cur, lixel_length, search_bandwidth):
 
         neighbour_lixels = cur.fetchall()
 
-        add_lixel_density(lixel_densities, edge_id, 0, count)
+        add_lixel_density(lixel_densities, edge_id, 0, count, search_bandwidth)
 
         for neighbour_lixel in neighbour_lixels:
-            add_lixel_density(lixel_densities, neighbour_lixel[0], neighbour_lixel[1], count)
+            add_lixel_density(lixel_densities, neighbour_lixel[0], neighbour_lixel[1], count, search_bandwidth)
 
     values = [(edge_id, density) for edge_id, density in lixel_densities.items()]
     query = "INSERT INTO lixel_{0}_{1}_densities VALUES %s".format(lixel_length, search_bandwidth)
     execute_values(cur, query, values)
 
-def quartic_curve(distance, search_radius):
-    return (3.0/4.0) * (1.0 - ((distance ** 2) / (search_radius ** 2)))
+def quartic_curve(distance, search_bandwidth):
+    return (3.0/4.0) * (1.0 - ((distance ** 2) / (search_bandwidth ** 2)))
 
 def compute_density(distance, num_events, search_radius, kernel):
     return num_events * (1.0 / search_radius) * kernel(distance, search_radius)
 
-def add_lixel_density(lixel_densities, edge_id, distance, num_events):
+def add_lixel_density(lixel_densities, edge_id, distance, num_events, search_bandwidth):
     if edge_id not in lixel_densities:
         lixel_densities[edge_id] = 0
 
-    lixel_densities[edge_id] += compute_density(distance, num_events, 100, quartic_curve)
+    lixel_densities[edge_id] += compute_density(distance, num_events, search_bandwidth, quartic_curve)
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
