@@ -2,7 +2,6 @@ import argparse
 import subprocess
 import psycopg2
 
-
 def main(host, dbname, user, password, events, network, srid):
     connection_string = "host={0} dbname={1} user={2} password={3}".format(host, dbname, user, password)
     conn = psycopg2.connect(connection_string)
@@ -26,11 +25,10 @@ def main(host, dbname, user, password, events, network, srid):
 
     print("Building network topology...")
     cur.execute("""
-    SELECT topology.CreateTopology('network_topo', %s); 
-    SELECT topology.AddTopoGeometryColumn('network_topo', 'public', 'network', 'topo_geom', 'LINESTRING');
-    UPDATE network SET topo_geom = topology.toTopoGeom(wkb_geometry, 'network_topo', 1, 1.0);
-    """, (srid,))
-
+        SELECT topology.CreateTopology('network_topo', %s); 
+        SELECT topology.AddTopoGeometryColumn('network_topo', 'public', 'network', 'topo_geom', 'LINESTRING');
+        UPDATE network SET topo_geom = topology.toTopoGeom(wkb_geometry, 'network_topo', 1, 1.0);
+        """, (srid,))
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -48,7 +46,6 @@ def parse_arguments():
                         help="shapefile for network")
     parser.add_argument("-s", required=True, dest="srid", help="srid of data")
     return parser.parse_args()
-
 
 if __name__ == "__main__":
     main(**vars(parse_arguments()))
