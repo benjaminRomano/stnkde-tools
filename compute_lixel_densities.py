@@ -1,6 +1,8 @@
 import argparse
+import multiprocessing
 import psycopg2
 from psycopg2.extras import execute_values
+from joblib import Parallel, delayed
 
 # create dictionary of lixels and their densities
 def main(host, dbname, user, password, lixel_length, search_bandwidth, srid):
@@ -12,7 +14,7 @@ def main(host, dbname, user, password, lixel_length, search_bandwidth, srid):
     cur = conn.cursor()
 
     print("Computing lixel densities...")
-    compute_lixel_densities(cur, lixel_length, search_bandwidth)
+    compute_lixel_densities(cur, connection_string, lixel_length, search_bandwidth)
 
     print("Creating lixels table...")
     compute_lixels(cur, lixel_length, search_bandwidth, srid)
@@ -42,20 +44,14 @@ def compute_lixels(cur, lixel_length, search_bandwidth, srid):
                 LEFT JOIN lixel_%(lixel_length)s_%(search_bandwidth)s_densities ld ON ld.id = ed.edge_id;
     """, {"lixel_length": lixel_length, "search_bandwidth": search_bandwidth})
 
-def compute_lixel_densities(cur, lixel_length, search_bandwidth):
+def compute_lixel_densities_bucket(connection_string, bucket, lixel_length, search_bandwidth):
+    conn = psycopg2.connect(connection_string)
+    conn.autocommit = True
+
+    cur = conn.cursor()
     lixel_densities = {}
-    cur.execute("""
-        CREATE TABLE public.lixel_%(lixel_length)s_%(search_bandwidth)s_densities (
-        id integer NOT NULL,
-        density double precision,
-        CONSTRAINT lixel_%(lixel_length)s_%(search_bandwidth)s_densities_pkey PRIMARY KEY (id))
-    """, {"lixel_length": lixel_length, "search_bandwidth": search_bandwidth})
 
-    cur.execute("""SELECT edge_id, count FROM lixel_%s_count WHERE count > 0""", (lixel_length,))
-    rows = cur.fetchall()
-
-    print("Starting to process {0} source_lixels".format(len(rows)))
-    for row in rows:
+    for row in bucket:
         edge_id = row[0]
         count = row[1]
 
@@ -72,9 +68,39 @@ def compute_lixel_densities(cur, lixel_length, search_bandwidth):
         for neighbour_lixel in neighbour_lixels:
             add_lixel_density(lixel_densities, neighbour_lixel[0], neighbour_lixel[1], count, search_bandwidth)
 
-    values = [(edge_id, density) for edge_id, density in lixel_densities.items()]
+    return lixel_densities
+
+def compute_lixel_densities(cur, connection_string, lixel_length, search_bandwidth):
+    lixel_densities = {}
+    cur.execute("""
+        CREATE TABLE public.lixel_%(lixel_length)s_%(search_bandwidth)s_densities (
+        id integer NOT NULL,
+        density double precision,
+        CONSTRAINT lixel_%(lixel_length)s_%(search_bandwidth)s_densities_pkey PRIMARY KEY (id))
+    """, {"lixel_length": lixel_length, "search_bandwidth": search_bandwidth})
+
+    cur.execute("""SELECT edge_id, count FROM lixel_%s_count WHERE count > 0""", (lixel_length,))
+    rows = cur.fetchall()
+
+    buckets = [[] for i in range(multiprocessing.cpu_count())]
+    for row in rows:
+        buckets[row[0] % len(buckets)].append(row)
+
+    lixel_densities_list = Parallel(n_jobs=-1)(delayed(compute_lixel_densities_bucket)(connection_string, buckets[i], lixel_length, search_bandwidth) for i in range(len(buckets)))
+
+    values = [(edge_id, density) for edge_id, density in merge_lixel_densities(lixel_densities_list).items()]
     query = "INSERT INTO lixel_{0}_{1}_densities VALUES %s".format(lixel_length, search_bandwidth)
     execute_values(cur, query, values)
+
+def merge_lixel_densities(lixel_densities_list):
+    total_lixel_densities = {}
+    for lixel_densities in lixel_densities_list:
+        for edge_id, density in lixel_densities.items():
+            if edge_id not in total_lixel_densities:
+                total_lixel_densities[edge_id] = 0
+            total_lixel_densities[edge_id] += density
+
+    return total_lixel_densities
 
 def quartic_curve(distance, search_bandwidth):
     return (3.0/4.0) * (1.0 - ((distance ** 2) / (search_bandwidth ** 2)))

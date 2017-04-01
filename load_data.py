@@ -11,10 +11,10 @@ def main(host, dbname, user, password, events, network, srid):
     print("Adding necessary extensions to database...")
 
     cur.execute("""
-        CREATE EXTENSION IF NOT EXISTS pgrouting;
         CREATE EXTENSION IF NOT EXISTS postgis; 
         CREATE EXTENSION IF NOT EXISTS postgis_topology; 
         SET search_path = topology,public;
+        CREATE EXTENSION IF NOT EXISTS pgrouting;
     """)
 
     print("Loading network shapefile...")

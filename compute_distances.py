@@ -76,6 +76,11 @@ def generate_midpoints(cur, lixel_length, srid):
     cur.execute("""INSERT INTO lixel_%(lixel_length)s_midpoints SELECT edge_id, ST_LineInterpolatePoint(geom, 0.5) FROM network_topo_%(lixel_length)s.edge_data""", {"lixel_length": lixel_length})
 
 def compute_lixel_counts(cur, lixel_length):
+    cur.execute("select exists(select * from information_schema.tables where table_name='lixel_%s_count')", (lixel_length,))
+
+    if cur.fetchone()[0]:
+        return
+
     cur.execute("""
     CREATE TABLE public.lixel_%(lixel_length)s_count(
         edge_id integer NOT NULL,
