@@ -71,7 +71,6 @@ def compute_lixel_densities_bucket(connection_string, bucket, lixel_length, sear
     return lixel_densities
 
 def compute_lixel_densities(cur, connection_string, lixel_length, search_bandwidth):
-    lixel_densities = {}
     cur.execute("""
         CREATE TABLE public.lixel_%(lixel_length)s_%(search_bandwidth)s_densities (
         id integer NOT NULL,
