@@ -67,19 +67,22 @@ def generate_time_type_table(cur, time_type, date_field):
         CREATE TABLE {0} (
             id serial not null,
             value int not null,
-            CONSTRAINT {0}_primary_key PRIMARY KEY (id))
+            PRIMARY KEY (id))
     """).format(sql.Identifier(time_type_table)))
+
+    time_type_data_type = get_time_type_data_type(time_type)
 
     cur.execute(sql.SQL("""
         INSERT INTO {0} (value)
-        SELECT DISTINCT ( EXTRACT({1} FROM {2}))::int as f FROM events ORDER BY f 
-    """).format(sql.Identifier(time_type_table), sql.Identifier(time_type_field),
-                sql.Identifier(date_field)))
+        SELECT DISTINCT ( EXTRACT({1} FROM {2}::%s))::int as f FROM events ORDER BY f 
+    """ % time_type_data_type).format(sql.Identifier(time_type_table), sql.Identifier(time_type_field),
+                                      sql.Identifier(date_field)))
 
 def compute_arixel_count(cur, lixel_length, time_type, date_field):
     time_type_field = get_time_type_field(time_type)
     time_type_string = get_time_type_string(time_type)
     time_type_table = get_time_type_table(time_type)
+    time_type_data_type = get_time_type_data_type(time_type)
 
     table_name = "arixel_{0}_{1}_count".format(lixel_length, time_type_string)
 
@@ -91,48 +94,23 @@ def compute_arixel_count(cur, lixel_length, time_type, date_field):
             time_id integer NOT NULL,
             edge_id integer NOT NULL,
             count integer NOT NULL,
-            CONSTRAINT {1} PRIMARY KEY (time_id, edge_id));
-    """).format(sql.Identifier(table_name), sql.Identifier(table_name + "_primary_key")))
+            PRIMARY KEY (time_id, edge_id));
+    """).format(sql.Identifier(table_name)))
 
     cur.execute(sql.SQL("""
         INSERT INTO {0}
         SELECT time_id, edge_id, COUNT(t.gid) FROM
             (SELECT gid, z.id as time_id,
             (SELECT edge_id
-            FROM network_topo_%s.edge_data
+            FROM network_topo_{1}.edge_data
             ORDER BY geom <#> e.wkb_geometry LIMIT 1)
             FROM  events as e
-            INNER JOIN {1} as z ON (EXTRACT({2} FROM {3})) = z.value
+            INNER JOIN {2} as z ON (EXTRACT({3} FROM {4}::%s)) = z.value
             ) as t
         GROUP BY t.edge_id, t.time_id
-    """).format(sql.Identifier(table_name), sql.Identifier(time_type_table),
-                sql.Identifier(time_type_field), sql.Identifier(date_field)),
-                (lixel_length,))
-
-def compute_lixels(cur, lixel_length, search_bandwidth, srid):
-    cur.execute("""
-        CREATE TABLE lixels_%(lixel_length)s_%(search_bandwidth)s(
-            edge_id int NOT NULL,
-            geom geometry(LineString, %(srid)s) NOT NULL,
-            count int NOT NULL,
-            density double precision NOT NULL)
-    """, {"lixel_length": lixel_length, "search_bandwidth": search_bandwidth, "srid": srid})
-
-    cur.execute("""
-        INSERT INTO lixels_%(lixel_length)s_%(search_bandwidth)s 
-        SELECT ed.edge_id, ed.geom, 
-                CASE
-                    WHEN lc.count IS NULL THEN 0
-                    ELSE lc.count
-                END as count,
-                CASE
-                    WHEN ld.density IS NULL THEN 0::double precision
-                    ELSE ld.density
-                END AS density
-            FROM network_topo_%(lixel_length)s.edge_data ed
-                LEFT JOIN lixel_%(lixel_length)s_count lc ON lc.edge_id = ed.edge_id
-                LEFT JOIN lixel_%(lixel_length)s_%(search_bandwidth)s_densities ld ON ld.id = ed.edge_id;
-    """, {"lixel_length": lixel_length, "search_bandwidth": search_bandwidth})
+    """ % time_type_data_type).format(sql.Identifier(table_name), sql.Literal(lixel_length),
+                                      sql.Identifier(time_type_table), sql.Identifier(time_type_field),
+                                      sql.Identifier(date_field)))
 
 def compute_arixel_densities_bucket(connection_string, bucket, time_type, lixel_length, space_search_bandwidth, time_search_bandwidth):
     conn = psycopg2.connect(connection_string)
@@ -179,8 +157,8 @@ def compute_arixel_densities(cur, connection_string, time_type, lixel_length, sp
         time_id integer NOT NULL,
         edge_id integer NOT NULL,
         density double precision,
-        CONSTRAINT {1} PRIMARY KEY (time_id, edge_id))
-    """).format(sql.Identifier(table_name), sql.Identifier(table_name + "_primary_key")))
+        PRIMARY KEY (time_id, edge_id))
+    """).format(sql.Identifier(table_name)))
 
     cur.execute(sql.SQL("""
         SELECT time_id, edge_id, count FROM {0} WHERE count > 0
@@ -224,15 +202,16 @@ def compute_time_distance(time_ids, time_id1, time_id2, cyclic):
 
 def compute_neighbour_time_ids(time_ids, time_id, search_bandwidth, cyclic):
     neighbour_time_ids = set()
+    time_id_index = time_ids.index(time_id)
     for i in range(search_bandwidth):
-        if time_id - i < 0 and not cyclic:
+        if time_id_index - i < 0 and not cyclic:
             break
-        neighbour_time_ids.add(time_ids[(time_id - i) % len(time_ids)])
+        neighbour_time_ids.add(time_ids[(time_id_index - i) % len(time_ids)])
 
     for i in range(search_bandwidth):
-        if time_id + i >= len(time_ids) and not cyclic:
+        if time_id_index + i >= len(time_ids) and not cyclic:
             break
-        neighbour_time_ids.add(time_ids[(time_id + i) % len(time_ids)])
+        neighbour_time_ids.add(time_ids[(time_id_index + i) % len(time_ids)])
 
     return neighbour_time_ids
 
@@ -257,6 +236,15 @@ def validate_time_type(value):
         raise argparse.ArgumentTypeError("{0} is not a valid time_type value".format(value))
 
     return value
+
+
+# TODO: Should probably convert this to class or something...
+
+def get_time_type_data_type(time_type):
+    if time_type in ["h"]:
+        return "TIME"
+    else:
+        return "DATE"
 
 def get_time_type_field(time_type):
     if time_type == "dw":

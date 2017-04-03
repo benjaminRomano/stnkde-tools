@@ -26,6 +26,5 @@ $ python compute_arixel_densities.py -host localhost -d test2 -u bromano -p pass
 
 
 # ISSUES
-Soem of the arixel densities are negative. 
-Possible causes are bad density computing functions or improper time distance computations... 
-Even with this issue, the overall pattern of the 3d visualization looks consistent with the lixel approach.
+Replace time_ids with display names in arixels table
+Need to clean up code
