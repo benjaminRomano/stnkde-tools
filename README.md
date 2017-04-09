@@ -13,6 +13,11 @@ $ python load_data.py -host localhost -d test2 -u bromano -p password -n ./manha
 $ python compute_distances.py -host localhost -d test2 -u bromano -p password -l 50 -s 26918 -sb 100
 ```
 
+### Create Lixels Example
+```
+$ python create_lixels.py -host localhost -d test2 -u bromano -p password -l 50 -s 26918
+```
+
 
 ### Compute Lixel Densities Example
 ```
