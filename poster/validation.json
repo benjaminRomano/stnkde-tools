@@ -1,0 +1,34 @@
+{
+  "file": "New-York-City-Traffic-Collisions-16x26.png",
+  "dimensions_px": [
+    4800,
+    7800
+  ],
+  "ppi": 300,
+  "poster_sha256": "c39c0bb419f5b68cf1ccf25efccd34f0f6d343afa1c38c1be54b8a560b9d1105",
+  "input_sha256": "0e04c542e89f83ce0781438e88922f8b9e30ead496a48c75a8bdba8738487eeb",
+  "graph_sha256": "345bed425079a226dcf09d8c4f3e8fdcdfa805ad36b73c4c5aab679f7c927daf",
+  "corrected_reference_max_error": 0.0,
+  "kernel": "epanechnikov",
+  "bandwidth_m": 100,
+  "scale": "log1p",
+  "scale_ceiling": 5.60221994929095,
+  "framing": "01-current",
+  "extent_m": [
+    582700.0,
+    4505475.047869218,
+    589460.4792185627,
+    4515624.952130782
+  ],
+  "year": null,
+  "matched_period": false,
+  "accepted_crashes": 187281,
+  "positive_lixels_in_view": 16534,
+  "footer": "New York City Open Data, 2012\u20132017",
+  "observation_window": "2012-07 through 2017-04-30",
+  "pixel_identical_to_standalone_render": true,
+  "embedded_srgb": true,
+  "opaque_rgb": true,
+  "annual_source_and_count_conservation": "passed",
+  "checked_on": "2026-10-06"
+}

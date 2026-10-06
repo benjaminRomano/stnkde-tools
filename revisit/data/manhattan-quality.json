@@ -1,0 +1,93 @@
+[
+  {
+    "year": "2013",
+    "records": "41582",
+    "with_latitude": "41582",
+    "with_longitude": "41582",
+    "injured": "7585"
+  },
+  {
+    "year": "2014",
+    "records": "41270",
+    "with_latitude": "41269",
+    "with_longitude": "41269",
+    "injured": "6909"
+  },
+  {
+    "year": "2015",
+    "records": "42528",
+    "with_latitude": "42527",
+    "with_longitude": "42527",
+    "injured": "6532"
+  },
+  {
+    "year": "2016",
+    "records": "36077",
+    "with_latitude": "31796",
+    "with_longitude": "31796",
+    "injured": "6236"
+  },
+  {
+    "year": "2017",
+    "records": "31774",
+    "with_latitude": "30297",
+    "with_longitude": "30297",
+    "injured": "5648"
+  },
+  {
+    "year": "2018",
+    "records": "31412",
+    "with_latitude": "29783",
+    "with_longitude": "29783",
+    "injured": "5435"
+  },
+  {
+    "year": "2019",
+    "records": "26593",
+    "with_latitude": "25587",
+    "with_longitude": "25587",
+    "injured": "5242"
+  },
+  {
+    "year": "2020",
+    "records": "10855",
+    "with_latitude": "10484",
+    "with_longitude": "10484",
+    "injured": "3576"
+  },
+  {
+    "year": "2021",
+    "records": "11432",
+    "with_latitude": "11004",
+    "with_longitude": "11004",
+    "injured": "4632"
+  },
+  {
+    "year": "2022",
+    "records": "11988",
+    "with_latitude": "11567",
+    "with_longitude": "11567",
+    "injured": "5132"
+  },
+  {
+    "year": "2023",
+    "records": "11823",
+    "with_latitude": "11582",
+    "with_longitude": "11582",
+    "injured": "5613"
+  },
+  {
+    "year": "2024",
+    "records": "11903",
+    "with_latitude": "11733",
+    "with_longitude": "11733",
+    "injured": "5778"
+  },
+  {
+    "year": "2025",
+    "records": "13229",
+    "with_latitude": "13170",
+    "with_longitude": "13170",
+    "injured": "6463"
+  }
+]

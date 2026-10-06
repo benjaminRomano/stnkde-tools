@@ -1,0 +1,42 @@
+{
+  "retrieved_at": "2026-10-03T02:09:10.142857+00:00",
+  "source": "https://data.cityofnewyork.us/resource/h9gi-nx95.json",
+  "metadata": "https://data.cityofnewyork.us/api/views/h9gi-nx95.json",
+  "global_coverage": {
+    "first": "2012-07-01T00:00:00.000",
+    "latest": "2026-06-11T00:00:00.000",
+    "n": "2269187"
+  },
+  "analysis_window": {
+    "first": "2013-01-01",
+    "latest": "2025-12-31",
+    "complete_years_only": true
+  },
+  "query_where": "latitude between 40.750 and 40.768 and longitude between -73.970 and -73.948 AND crash_date >= '2013-01-01T00:00:00' AND crash_date < '2026-01-01T00:00:00' AND crash_date <= '2026-06-11T00:00:00.000'",
+  "query_select": "collision_id,crash_date,crash_time,latitude,longitude,borough,on_street_name,cross_street_name,off_street_name,number_of_persons_injured,number_of_persons_killed,number_of_pedestrians_injured,number_of_pedestrians_killed,number_of_cyclist_injured,number_of_cyclist_killed,number_of_motorist_injured,number_of_motorist_killed",
+  "page_urls": [
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Ccrash_time%2Clatitude%2Clongitude%2Cborough%2Con_street_name%2Ccross_street_name%2Coff_street_name%2Cnumber_of_persons_injured%2Cnumber_of_persons_killed%2Cnumber_of_pedestrians_injured%2Cnumber_of_pedestrians_killed%2Cnumber_of_cyclist_injured%2Cnumber_of_cyclist_killed%2Cnumber_of_motorist_injured%2Cnumber_of_motorist_killed&%24where=latitude+between+40.750+and+40.768+and+longitude+between+-73.970+and+-73.948+AND+crash_date+%3E%3D+%272013-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272026-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+-1&%24order=collision_id&%24limit=5000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Ccrash_time%2Clatitude%2Clongitude%2Cborough%2Con_street_name%2Ccross_street_name%2Coff_street_name%2Cnumber_of_persons_injured%2Cnumber_of_persons_killed%2Cnumber_of_pedestrians_injured%2Cnumber_of_pedestrians_killed%2Cnumber_of_cyclist_injured%2Cnumber_of_cyclist_killed%2Cnumber_of_motorist_injured%2Cnumber_of_motorist_killed&%24where=latitude+between+40.750+and+40.768+and+longitude+between+-73.970+and+-73.948+AND+crash_date+%3E%3D+%272013-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272026-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+1015891&%24order=collision_id&%24limit=5000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Ccrash_time%2Clatitude%2Clongitude%2Cborough%2Con_street_name%2Ccross_street_name%2Coff_street_name%2Cnumber_of_persons_injured%2Cnumber_of_persons_killed%2Cnumber_of_pedestrians_injured%2Cnumber_of_pedestrians_killed%2Cnumber_of_cyclist_injured%2Cnumber_of_cyclist_killed%2Cnumber_of_motorist_injured%2Cnumber_of_motorist_killed&%24where=latitude+between+40.750+and+40.768+and+longitude+between+-73.970+and+-73.948+AND+crash_date+%3E%3D+%272013-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272026-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+3350757&%24order=collision_id&%24limit=5000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Ccrash_time%2Clatitude%2Clongitude%2Cborough%2Con_street_name%2Ccross_street_name%2Coff_street_name%2Cnumber_of_persons_injured%2Cnumber_of_persons_killed%2Cnumber_of_pedestrians_injured%2Cnumber_of_pedestrians_killed%2Cnumber_of_cyclist_injured%2Cnumber_of_cyclist_killed%2Cnumber_of_motorist_injured%2Cnumber_of_motorist_killed&%24where=latitude+between+40.750+and+40.768+and+longitude+between+-73.970+and+-73.948+AND+crash_date+%3E%3D+%272013-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272026-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+3705155&%24order=collision_id&%24limit=5000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Ccrash_time%2Clatitude%2Clongitude%2Cborough%2Con_street_name%2Ccross_street_name%2Coff_street_name%2Cnumber_of_persons_injured%2Cnumber_of_persons_killed%2Cnumber_of_pedestrians_injured%2Cnumber_of_pedestrians_killed%2Cnumber_of_cyclist_injured%2Cnumber_of_cyclist_killed%2Cnumber_of_motorist_injured%2Cnumber_of_motorist_killed&%24where=latitude+between+40.750+and+40.768+and+longitude+between+-73.970+and+-73.948+AND+crash_date+%3E%3D+%272013-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272026-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+4052942&%24order=collision_id&%24limit=5000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Ccrash_time%2Clatitude%2Clongitude%2Cborough%2Con_street_name%2Ccross_street_name%2Coff_street_name%2Cnumber_of_persons_injured%2Cnumber_of_persons_killed%2Cnumber_of_pedestrians_injured%2Cnumber_of_pedestrians_killed%2Cnumber_of_cyclist_injured%2Cnumber_of_cyclist_killed%2Cnumber_of_motorist_injured%2Cnumber_of_motorist_killed&%24where=latitude+between+40.750+and+40.768+and+longitude+between+-73.970+and+-73.948+AND+crash_date+%3E%3D+%272013-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272026-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+4503297&%24order=collision_id&%24limit=5000"
+  ],
+  "rows": 28226,
+  "sha256": "30c136e048f4b70a7e538c31f9491f27c0ec6e28b4900edd466b13da220e1ab4",
+  "study_bbox_lonlat": [
+    -73.967,
+    40.7525,
+    -73.951,
+    40.7655
+  ],
+  "download_bbox_lonlat": [
+    -73.97,
+    40.75,
+    -73.948,
+    40.768
+  ],
+  "quality_context_query": "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=date_extract_y%28crash_date%29+as+year%2Ccount%28%2A%29+as+records%2Ccount%28latitude%29+as+with_latitude%2Ccount%28longitude%29+as+with_longitude%2Csum%28number_of_persons_injured%29+as+injured&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272013-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272026-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27&%24group=year&%24order=year",
+  "source_notice": "<b>NOTE:</b> This dataset is temporarily not updating while its automated update process is being fixed. This fix is expected to be completed during the month of August.",
+  "geography": "Fixed Queensboro Bridge Manhattan approach window; all borough labels, valid coordinates; wider buffer for smoothing. Does not cover the entire bridge."
+}

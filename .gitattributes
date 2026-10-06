@@ -1,0 +1,22 @@
+# Preserve checksum-verified CSV bytes, including their original CRLF endings.
+*.csv -text whitespace=cr-at-eol
+# Historical sources and rendered SVG/HTML retain their original whitespace.
+reproduction/legacy/** whitespace=-blank-at-eol,-blank-at-eof
+*.svg whitespace=-blank-at-eol,-blank-at-eof
+reproduction/report.html whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+revisit/explorer.html whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+
+# Keep generated deliverables and frozen data out of the default source review.
+reproduction/data/** linguist-generated=true
+reproduction/results/** linguist-generated=true
+reproduction/site/public/** linguist-generated=true
+reproduction/report.html linguist-generated=true
+revisit/data/** linguist-generated=true
+revisit/results/** linguist-generated=true
+revisit/figures/** linguist-generated=true
+revisit/site/*.json linguist-generated=true
+revisit/*.html linguist-generated=true
+revisit/*artifact.json linguist-generated=true
+poster/data/** linguist-generated=true
+poster/annual/data/** linguist-generated=true
+poster/studies/** linguist-generated=true

@@ -1,0 +1,20 @@
+name: stnkde-reproduction
+services:
+  database:
+    image: pgrouting/pgrouting:18-3.6-4.0@sha256:3fb0c568d1ff5c9bd9c7039aa982529d386ac5b254a6116187562c5840adc29f
+    platform: linux/amd64
+    environment:
+      POSTGRES_PASSWORD: stnkde-local-only
+      POSTGRES_DB: stnkde
+    ports:
+      - "127.0.0.1:55437:5432"
+    volumes:
+      - database:/var/lib/postgresql
+    command: [postgres, -c, shared_buffers=256MB, -c, max_connections=30]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U postgres -d stnkde"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+volumes:
+  database:

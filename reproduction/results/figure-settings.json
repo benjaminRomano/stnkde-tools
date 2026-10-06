@@ -1,0 +1,56 @@
+{
+  "coverage": "Figure 5: event-bearing cells in both stages. Figure 4: full calculated field in both stages, before the intentional sparse export. Spatial NKDE: full field.",
+  "figure2": {
+    "center_lonlat": [
+      -73.96265,
+      40.7595
+    ],
+    "extent_m": [
+      -360,
+      -205,
+      360,
+      205
+    ],
+    "rotation_deg": 0
+  },
+  "figure4_5": {
+    "center_lonlat": [
+      -73.96345,
+      40.76015
+    ],
+    "extent_m": [
+      -350,
+      -350,
+      350,
+      350
+    ],
+    "rotation_deg": -35
+  },
+  "figure5": {
+    "extent_m": [
+      -250,
+      -250,
+      250,
+      250
+    ],
+    "rotation_deg": -35
+  },
+  "figure3": {
+    "extent_m": [
+      583136.8305038067,
+      4505365.575731212,
+      590858.2001724449,
+      4516558.483853004
+    ],
+    "planar_bandwidth_m": 500,
+    "grid_m": 25
+  },
+  "figure4": {
+    "display_wall_width_m": 10,
+    "display_year_spacing_m": 12,
+    "camera_elevation_deg": 48,
+    "camera_azimuth_deg": -90
+  },
+  "framing_status": "Estimated from the supplied images. Original QGIS extents, camera and class breaks remain unavailable.",
+  "important": "Matching display coverage removes the intentional sparse/full-field difference from the before/after plates. Calculation values are unchanged. The interactive report can show the historical event-only coverage for the cube."
+}

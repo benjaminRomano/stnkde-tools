@@ -1,0 +1,43 @@
+{
+  "question": "How does recorded collision concentration vary from 2017 to 2026?",
+  "family": "geospatial annual small multiples",
+  "renderer": "Matplotlib, approved poster body",
+  "scale": {
+    "method": "log1p",
+    "minimum": 0,
+    "maximum": 0.8694856649167154,
+    "shared_across_all_years_and_modes": true
+  },
+  "framing": "02 Closer Manhattan, 1.15x",
+  "extent_m": [
+    582840.9008186018,
+    4505836.998147146,
+    588719.5783999608,
+    4514663.001852854
+  ],
+  "palette": [
+    "#1d70ad",
+    "#36a3b8",
+    "#ffd84a",
+    "#ff7d24",
+    "#e51e26"
+  ],
+  "years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "source": "https://data.cityofnewyork.us/resource/h9gi-nx95.json",
+  "latest_available": "2026-06-11",
+  "data_grain": "50 m lixels; annual assigned crash counts smoothed at 100 m on a fixed network",
+  "temporal_smoothing": false,
+  "2026_annualized": false,
+  "secondary_comparison": "Jan 1\u2013Jun 11 in every year"
+}

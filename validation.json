@@ -1,0 +1,30 @@
+{
+  "checked_on": "2026-10-06",
+  "analytical_unit_tests": {
+    "passed": 8
+  },
+  "database_integrity": "passed; input accounting, lixel bounds, eight completed runs, accepted-count conservation, finite nonnegative arrays",
+  "frontend_numerical_validation": "six configurations \u00d7 1095 lixels; raw counts exact; maximum absolute density error below 1e-9",
+  "frontend_builds": {
+    "reproduction": "passed",
+    "revisit": "passed",
+    "warning": "Vite notes >500 kB chunks from bundled Three.js; no build errors"
+  },
+  "python_compile": "supported top-level modules passed; unmodified Python 2 legacy scripts excluded",
+  "poster_render": "corrected-reference error 0.0; final RGB pixels identical to independent standalone regeneration; 4800 \u00d7 7800 sRGB at 300 PPI",
+  "annual_snapshot": "CSV/cache SHA-256, accepted-count conservation, matched-period subset, partial 2026 equality passed",
+  "browser_validation": "Existing historical receipts in reproduction/results/browser-qa.json and revisit/results/browser-qa.json; not rerun during PR packaging",
+  "legacy_arithmetic_equivalence": {
+    "sample_sources": 64,
+    "max_absolute_error": 6.938893903907228e-18,
+    "checks": "Original unmodified arixel worker, mocked neighbor retrieval, same graph distances, full 24-hour axis before output mask."
+  },
+  "routing_equivalence": {
+    "sources": 24,
+    "midpoint_distances": 279,
+    "max_error_m": 0.0,
+    "pgrouting_batch_seconds": 0.0839115830603987,
+    "scipy_batch_seconds": 0.001308040926232934,
+    "scope": "same bounded driving-distance workload; excludes graph construction and import"
+  }
+}

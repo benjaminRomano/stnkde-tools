@@ -1,0 +1,107 @@
+{
+  "source_key": {
+    "source_sha256": "b506a8b4e78a0cc4e7db4628d2701c4bb218423ab29ce53a679b8d799051363d",
+    "graph_sha256": "345bed425079a226dcf09d8c4f3e8fdcdfa805ad36b73c4c5aab679f7c927daf",
+    "assignment": "exact nearest lixel, deterministic ID ties, max 100 m",
+    "input_region_lonlat": [
+      -74.03,
+      40.69,
+      -73.9,
+      40.91
+    ],
+    "cutoff": "2026-06-11"
+  },
+  "quality": {
+    "2017": {
+      "records": 31774,
+      "missing_or_invalid_coordinates": 1477,
+      "outside_input_region": 34,
+      "valid_coordinates_in_region": 30263,
+      "rejected_over_100m": 5,
+      "accepted": 30258,
+      "accepted_same_period": 13302
+    },
+    "2018": {
+      "records": 31412,
+      "missing_or_invalid_coordinates": 1629,
+      "outside_input_region": 80,
+      "valid_coordinates_in_region": 29703,
+      "rejected_over_100m": 13,
+      "accepted": 29690,
+      "accepted_same_period": 13010
+    },
+    "2019": {
+      "records": 26593,
+      "missing_or_invalid_coordinates": 1006,
+      "outside_input_region": 41,
+      "valid_coordinates_in_region": 25546,
+      "rejected_over_100m": 0,
+      "accepted": 25546,
+      "accepted_same_period": 11385
+    },
+    "2020": {
+      "records": 10855,
+      "missing_or_invalid_coordinates": 371,
+      "outside_input_region": 17,
+      "valid_coordinates_in_region": 10467,
+      "rejected_over_100m": 1,
+      "accepted": 10466,
+      "accepted_same_period": 5141
+    },
+    "2021": {
+      "records": 11432,
+      "missing_or_invalid_coordinates": 428,
+      "outside_input_region": 92,
+      "valid_coordinates_in_region": 10912,
+      "rejected_over_100m": 0,
+      "accepted": 10912,
+      "accepted_same_period": 4110
+    },
+    "2022": {
+      "records": 11988,
+      "missing_or_invalid_coordinates": 421,
+      "outside_input_region": 239,
+      "valid_coordinates_in_region": 11328,
+      "rejected_over_100m": 1,
+      "accepted": 11327,
+      "accepted_same_period": 4771
+    },
+    "2023": {
+      "records": 11823,
+      "missing_or_invalid_coordinates": 241,
+      "outside_input_region": 47,
+      "valid_coordinates_in_region": 11535,
+      "rejected_over_100m": 0,
+      "accepted": 11535,
+      "accepted_same_period": 4879
+    },
+    "2024": {
+      "records": 11903,
+      "missing_or_invalid_coordinates": 170,
+      "outside_input_region": 90,
+      "valid_coordinates_in_region": 11643,
+      "rejected_over_100m": 0,
+      "accepted": 11643,
+      "accepted_same_period": 4757
+    },
+    "2025": {
+      "records": 13229,
+      "missing_or_invalid_coordinates": 59,
+      "outside_input_region": 501,
+      "valid_coordinates_in_region": 12669,
+      "rejected_over_100m": 0,
+      "accepted": 12669,
+      "accepted_same_period": 5382
+    },
+    "2026": {
+      "records": 5299,
+      "missing_or_invalid_coordinates": 12,
+      "outside_input_region": 199,
+      "valid_coordinates_in_region": 5088,
+      "rejected_over_100m": 0,
+      "accepted": 5088,
+      "accepted_same_period": 5088
+    }
+  },
+  "counts_sha256": "25e4527eebcfc78d8ed69b49af30c417ed94295712d114dc18ff341ba5a98b6e"
+}

@@ -1,0 +1,6 @@
+{
+  "sha256": "f41a2ddc8c8aaad5be762ca80a93422dd8b37fe7a57ccf6e0638f9bfb7f07097",
+  "origin": "Static light/dark chart SVGs extracted by the official portable builder in the successful initial delivery. Reused only after asserting exact equality of all chart specs and datasets.",
+  "final_verification": "Official verify_portable_artifact passed source equality, 29 blocks, 4 charts, 4 custom map blocks, source dialog, desktop and narrow layouts. The specialized headless static extractor later timed out even on the previously verified file; unchanged verified SVGs were retained.",
+  "rendering_sha256": "6813a6ac41bdae51e9c1a3108988edc8da581c590fd2b16922a2c7e96484c5fa"
+}

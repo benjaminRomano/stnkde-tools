@@ -1,0 +1,103 @@
+{
+  "approved_source_sha256": "5f35f39b9f3da6c6ed687042fe4a5d156588f7801b472c19e7a1fc676882fd2d",
+  "preserved_files": {
+    "session/work/poster/final/render_restored_colors.py": "5f35f39b9f3da6c6ed687042fe4a5d156588f7801b472c19e7a1fc676882fd2d",
+    "session/outputs/New-York-City-Traffic-Collisions-Final.png": "8ee3b29057062469e179b30e8e33b382a9e2460d5e1793fd7a6c64da8701ef5f",
+    "session/outputs/reproduction/report.html": "d67943861d7c87d9268b52ad6e3a38fb9d05c8c4b4b221e1f6ab744be53e807d"
+  },
+  "corrected_values_sha256": "f4748de6e0ffabd55bc8f52b7dff8acf96263d7f4e30ec1e578f01c50093762a",
+  "corrected_field_max_error": 0.0,
+  "palette": [
+    "#1d70ad",
+    "#36a3b8",
+    "#ffd84a",
+    "#ff7d24",
+    "#e51e26"
+  ],
+  "map_bounds": [
+    0.04,
+    0.05,
+    0.92,
+    0.85
+  ],
+  "map_extent": [
+    582700.0,
+    4505475.047869218,
+    589460.4792185627,
+    4515624.952130782
+  ],
+  "positive_segments": 16534,
+  "options": [
+    {
+      "slug": "01-current-linear",
+      "title": "Current linear",
+      "description": "The approved scale. Strong hotspots share maximum red.",
+      "method": "linear",
+      "density_ceiling": 2.5957330868922766,
+      "segments_above_ceiling": 179,
+      "segments_in_last_10_percent_of_palette": 255,
+      "monotonic": true,
+      "fixed_poster_regions_pixel_identical": true
+    },
+    {
+      "slug": "02-full-range-linear",
+      "title": "Full-range linear",
+      "description": "Separates the strongest hotspots; fewer streets reach red.",
+      "method": "linear",
+      "density_ceiling": 5.60221994929095,
+      "segments_above_ceiling": 0,
+      "segments_in_last_10_percent_of_palette": 3,
+      "monotonic": true,
+      "fixed_poster_regions_pixel_identical": true
+    },
+    {
+      "slug": "03-linear-p95",
+      "title": "Linear \u00b7 95th-percentile cap",
+      "description": "More orange and red; the highest 5% share maximum red.",
+      "method": "linear",
+      "density_ceiling": 1.5290682079205913,
+      "segments_above_ceiling": 827,
+      "segments_in_last_10_percent_of_palette": 1069,
+      "monotonic": true,
+      "fixed_poster_regions_pixel_identical": true
+    },
+    {
+      "slug": "04-logarithmic",
+      "title": "Logarithmic \u00b7 full range",
+      "description": "Expands differences at lower densities without clipping the peaks.",
+      "method": "log1p",
+      "density_ceiling": 5.60221994929095,
+      "segments_above_ceiling": 0,
+      "segments_in_last_10_percent_of_palette": 6,
+      "monotonic": true,
+      "fixed_poster_regions_pixel_identical": true
+    },
+    {
+      "slug": "05-power-curve",
+      "title": "Power curve \u00b7 subdued lows",
+      "description": "Keeps the current red ceiling; makes low densities bluer.",
+      "method": "power_gamma_1.5",
+      "density_ceiling": 2.5957330868922766,
+      "segments_above_ceiling": 179,
+      "segments_in_last_10_percent_of_palette": 228,
+      "monotonic": true,
+      "fixed_poster_regions_pixel_identical": true
+    },
+    {
+      "slug": "06-percentile-rank",
+      "title": "Percentile rank",
+      "description": "Color follows rank among positive segments, rather than magnitude.",
+      "method": "empirical_cdf",
+      "density_ceiling": 5.60221994929095,
+      "segments_above_ceiling": 0,
+      "segments_in_last_10_percent_of_palette": 1654,
+      "monotonic": true,
+      "fixed_poster_regions_pixel_identical": true
+    }
+  ],
+  "qa": {
+    "current_option_pixel_identical_to_approved": true,
+    "noncolor_poster_regions_pixel_identical": true,
+    "preserved_files_unchanged": true
+  }
+}

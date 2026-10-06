@@ -1,0 +1,13 @@
+test_bounded_routes_follow_network_not_straight_line (__main__.EstimatorTests.test_bounded_routes_follow_network_not_straight_line) ... ok
+test_calendar_gap_is_not_compressed (__main__.EstimatorTests.test_calendar_gap_is_not_compressed) ... ok
+test_kernel_normalization_and_support (__main__.EstimatorTests.test_kernel_normalization_and_support) ... ok
+test_matrix_estimator_against_hand_sum (__main__.EstimatorTests.test_matrix_estimator_against_hand_sum) ... ok
+test_midnight_wrap_and_kernel_boundary (__main__.EstimatorTests.test_midnight_wrap_and_kernel_boundary) ... ok
+test_reject_invalid_bandwidth_and_kernel (__main__.EstimatorTests.test_reject_invalid_bandwidth_and_kernel) ... ok
+test_source_lixel_temporal_smoothing_and_zero_count_output (__main__.EstimatorTests.test_source_lixel_temporal_smoothing_and_zero_count_output) ... ok
+test_spatial_decay_and_formula_isolation (__main__.EstimatorTests.test_spatial_decay_and_formula_isolation) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.005s
+
+OK

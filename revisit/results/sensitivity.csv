@@ -1,0 +1,7 @@
+bandwidth_m,kernel,positive_lixels,top_n,top_overlap_percent
+50,epanechnikov,554,75,93.33
+50,quartic,554,75,80.0
+75,epanechnikov,758,75,85.33
+75,quartic,758,75,100.0
+100,epanechnikov,859,75,73.33
+100,quartic,859,75,85.33

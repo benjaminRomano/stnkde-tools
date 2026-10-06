@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "html": "revisit/decision-dashboard.html",
+  "stages": {
+    "validation": "passed",
+    "package": "passed",
+    "verification": "passed"
+  },
+  "counts": {
+    "blocks": 30,
+    "charts": 7,
+    "html": 0,
+    "metrics": 3,
+    "tables": 2
+  },
+  "sourceDialog": "passed",
+  "sourceInteraction": "keyboard_menu_semantic_click",
+  "viewports": [
+    1440,
+    390
+  ],
+  "timings": {
+    "validateAndPackageMs": 1944.6,
+    "staticChartExtractionMs": 1728,
+    "browserRunMs": 1129.5,
+    "readerReadyMs": 58.2,
+    "contentChecksMs": 32.1,
+    "sourceDialogMs": 32,
+    "responsiveChecksMs": 32.1,
+    "verificationMs": 1177.5,
+    "totalMs": 3131.5
+  }
+}

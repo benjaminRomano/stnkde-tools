@@ -1,0 +1,48 @@
+{
+  "verified_at": "2026-10-03T02:49:18.288932+00:00",
+  "browser": "Codex in-app browser",
+  "url": "http://127.0.0.1:8878/revisit/explorer.html",
+  "viewports": [
+    {
+      "width": 1440,
+      "result": "Yearly maps, controls and Report tab visible; final newspaper masthead and narrative inspected."
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "result": "Report readable; document scrollWidth = clientWidth = 390."
+    }
+  ],
+  "passed": [
+    "All 13 complete years, 2013\u20132025, available; 2020 and 2021 annotations retained",
+    "Default annual injury totals: 233 and 203",
+    "Full computed coverage and a 20% display cutoff retain raw totals and shared numerical scale",
+    "Hour view uses cyclic two-hour smoothing; 2022\u20132025 sensitivity period selectable",
+    "Month view displays September with month-day denominator",
+    "Raw count view disables irrelevant kernel controls",
+    "Change map uses the full computed field and symmetric diverging scale",
+    "Year gallery selects 2017 and displays 335 injury crashes",
+    "Cube zoom changes camera; both cube styles show the same 13 years; before/after selectors hidden",
+    "Enlarged map modal and zoom control work",
+    "Export preview contains an actual 3200 \u00d7 1700 rendered PNG",
+    "Explore/Report tab navigation works; final Report click returns to the top",
+    "Report includes annual, hourly and seasonal charts, actual network maps, COVID/reporting context and primary-source policy leads",
+    "Final embedded report suppresses duplicate title and uses a white reader; standalone report retains its title"
+  ],
+  "canonical_readers": "Official source-equality and browser verification passed for dashboard and narrative at 1440 and 390 px. Receipts are dashboard-build.json and investigation-build.json.",
+  "console_observations": "Earlier embedded-reader runs recorded zero-size chart warnings during hidden-layout initialization and intermittent MutationObserver errors of unresolved origin. Final content rendered and official reader verification passed. Do not interpret this receipt as proving every browser log is clean.",
+  "download_limit": "The in-app browser did not complete native download events. The PNG preview was verified and its actual DOM-visible image saved as figures/explorer-export.png.",
+  "file_url_limit": "Self-contained files tested over localhost; file URLs are blocked by the testing browser and were not bypassed.",
+  "proof_images": [
+    "figures/report-tab.jpg",
+    "figures/report-mobile.jpg",
+    "figures/explorer-export.png",
+    "figures/paper-hourly-zoom.jpg"
+  ],
+  "scientific_limits": [
+    "Calendar-day frequency is not a traffic-exposure rate",
+    "Current planar network is held fixed across years; original historical topology unavailable",
+    "Smoothing is a model choice; default bandwidth is not statistically optimized",
+    "No causal policy effect or uncertainty interval is claimed"
+  ]
+}

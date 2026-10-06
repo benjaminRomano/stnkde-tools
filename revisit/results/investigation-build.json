@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "counts": {
+    "blocks": 29,
+    "charts": 4,
+    "html": 4,
+    "metrics": 0,
+    "tables": 0
+  },
+  "html": "revisit/investigation.html",
+  "sourceDialog": "passed",
+  "sourceInteraction": "keyboard_menu_semantic_click",
+  "timings": {
+    "browserRunMs": 868.1,
+    "readerReadyMs": 152.7,
+    "contentChecksMs": 32.1,
+    "sourceDialogMs": 31.9,
+    "responsiveChecksMs": 32.1,
+    "totalMs": 990.5
+  },
+  "viewports": [
+    1440,
+    390
+  ]
+}

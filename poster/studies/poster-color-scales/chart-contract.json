@@ -1,0 +1,38 @@
+{
+  "question": "How does color scaling change the visibility and differentiation of collision concentrations?",
+  "takeaway": "Compare magnitude-preserving linear scales with explicitly labeled nonlinear alternatives.",
+  "family": "geospatial small multiples",
+  "renderer": "Matplotlib; identical approved poster body",
+  "delivery": "six 4800 x 7800 PNGs and one static comparison grid, with an image-only browsing gallery",
+  "palette": [
+    "#1d70ad",
+    "#36a3b8",
+    "#ffd84a",
+    "#ff7d24",
+    "#e51e26"
+  ],
+  "grain": "50 m road lixels; fixed corrected spatial density estimates",
+  "positive_segments": 16534,
+  "map_extent": [
+    582700.0,
+    4505475.047869218,
+    589460.4792185627,
+    4515624.952130782
+  ],
+  "unchanged": [
+    "data",
+    "estimator",
+    "kernel",
+    "bandwidth",
+    "road geometry",
+    "line weights",
+    "map bounds",
+    "fonts",
+    "title",
+    "subtitle",
+    "legend copy",
+    "footer",
+    "frame"
+  ],
+  "no_square_root_scale": true
+}

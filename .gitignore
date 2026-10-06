@@ -1,0 +1,12 @@
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+**/node_modules/
+**/site/dist/
+**/*-pages/
+.DS_Store
+.env
+poster/.fonts/
+poster/generated/
+poster/.matplotlib/
