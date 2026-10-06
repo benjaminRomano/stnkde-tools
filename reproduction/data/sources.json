@@ -1,0 +1,31 @@
+{
+  "retrieved_at": "2026-10-03T01:23:06.289092+00:00",
+  "historical_snapshot": false,
+  "paper_cutoff_assumption": "2017-04-30 inclusive; exact publication-day cutoff was not specified",
+  "crashes": {
+    "url": "https://data.cityofnewyork.us/resource/h9gi-nx95.json",
+    "where": "crash_date >= '2012-01-01T00:00:00' AND crash_date < '2017-05-01T00:00:00' AND borough='MANHATTAN'",
+    "rows": 192042
+  },
+  "roads": {
+    "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Streets/MapServer/4/query",
+    "where": "LeftCountyName='New York' OR RightCountyName='New York'",
+    "output_srid": 26918,
+    "features": 15755
+  },
+  "limitations": [
+    "Current records can contain retrospective edits.",
+    "Current road geometries differ from the missing 2017 shapefile.",
+    "Borough attribute replaces the unpublished QGIS crop."
+  ],
+  "files": {
+    "crashes.csv": {
+      "sha256": "314da18d6a8be9bb7fbcfd76dece501a868d710c84f7eab79b8bed5214e0c372",
+      "bytes": 13519164
+    },
+    "roads.json": {
+      "sha256": "b834fd48eba3cbfca2b1ae3182cc7054b7c4e4e66d724c6bd53e0b3fc10ac927",
+      "bytes": 6171763
+    }
+  }
+}

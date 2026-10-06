@@ -1,0 +1,36 @@
+{
+  "question": "Which map framing best reveals road-level density differences around the Queensboro Bridge?",
+  "family": "geospatial small multiples",
+  "renderer": "Matplotlib; approved poster body reused verbatim",
+  "delivery": "six full-resolution PNG posters, a PNG comparison grid, and an image-only browsing gallery",
+  "scale": {
+    "method": "log1p",
+    "minimum": 0,
+    "maximum": 5.60221994929095,
+    "recomputed_per_crop": false
+  },
+  "palette": [
+    "#1d70ad",
+    "#36a3b8",
+    "#ffd84a",
+    "#ff7d24",
+    "#e51e26"
+  ],
+  "data_grain": "50 m lixels; fixed corrected spatial NKDE",
+  "variable": [
+    "map extent / zoom",
+    "map position"
+  ],
+  "fixed": [
+    "data",
+    "kernel",
+    "bandwidth",
+    "color scale",
+    "line widths",
+    "typography",
+    "legend",
+    "footer",
+    "poster dimensions",
+    "frame"
+  ]
+}

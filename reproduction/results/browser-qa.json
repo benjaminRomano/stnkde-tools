@@ -1,0 +1,84 @@
+{
+  "browser": "Codex in-app browser",
+  "verified_urls": [
+    "http://127.0.0.1:5177/",
+    "http://127.0.0.1:8877/report.html"
+  ],
+  "viewport_checks": [
+    {
+      "width": 1280,
+      "height": 900,
+      "result": "Two synchronized viewports; labels and controls visible"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "result": "Stacked viewports; document scrollWidth equals clientWidth (390 px)"
+    }
+  ],
+  "passed": [
+    "Annual cube renders from computed data",
+    "Hourly cube uses 20 m spacing and all 24 bins",
+    "Formula-only and quartic correction selectors update title and geometry",
+    "Six snapshots navigate to their corresponding hourly bin",
+    "Midnight slider displays 00:00",
+    "Spatial mode disables irrelevant time controls",
+    "Change view reports a separate symmetric numerical scale",
+    "Shared percentile and maximum scales update",
+    "Orbit changes both cameras together",
+    "Reset restores fitted view",
+    "Wall inspection reports lixel 8791, 2017, one raw crash and intensity 0.079467",
+    "Export image saves actual Three.js canvas comparison as PNG",
+    "All nine paper/reconstructed/profile images are embedded and loaded in standalone HTML",
+    "No console warnings or errors in standalone report"
+  ],
+  "file_url_check": "Not performed: testing browser policy blocks file URLs. Self-contained HTML verified over localhost; no policy workaround attempted.",
+  "concept_fidelity": [
+    {
+      "point": "White canvas, dark typography and blue controls",
+      "status": "Matched"
+    },
+    {
+      "point": "Paired before/after scientific viewports",
+      "status": "Matched"
+    },
+    {
+      "point": "Common blue-yellow-red scale",
+      "status": "Matched"
+    },
+    {
+      "point": "Six hourly snapshot strip",
+      "status": "Matched; wraps to three columns on mobile"
+    },
+    {
+      "point": "Three.js map geometry",
+      "status": "Intentional deviation: vertical road walls follow the paper, rather than concept image horizontal map plates"
+    },
+    {
+      "point": "Geographic extent",
+      "status": "Intentional deviation: actual reconstructed bridge approach replaces the concept image's illustrative whole-river map"
+    },
+    {
+      "point": "Additional settings and provenance",
+      "status": "Intentional deviation: necessary to distinguish corrections, kernel changes and historical reproduction limits"
+    }
+  ],
+  "scientific_figure_review": [
+    "Fixed overlapping Figure 3 headings",
+    "Changed planar KDE low end to white to approximate paper background",
+    "Reduced citywide NKDE line weight to retain planar heat map",
+    "Fixed Figure 5 so before/after use the same numeric scale",
+    "Inspected paper pages, concept image and actual reconstructed PNGs"
+  ],
+  "proof_image": "site/public/figures/figure4-comparison.png",
+  "followup_2026_10_02": {
+    "url": "http://127.0.0.1:8878/reproduction/report.html#paper",
+    "passed": [
+      "Figure 3 planar-layer checkbox swaps both baseline and corrected images to network-only variants; checked restoration verified",
+      "Figure 5 enlargement opens individual baseline image; 200% image width verified",
+      "Larger figure 2/3/4/5 assets regenerated and embedded",
+      "Figure 5 uses matching event-bearing coverage and shared scale; Figure 4 uses full fields on both sides"
+    ],
+    "proof_image": "../revisit/figures/paper-hourly-zoom.jpg"
+  }
+}

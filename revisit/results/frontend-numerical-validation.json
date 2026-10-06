@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "method": "Actual shipped pure JS estimator compared against independent direct frozen-CSV event sums, PostGIS exact assignments and unrounded SciPy graph distances. JSON distance rounding tolerance 1e-8.",
+  "cases": [
+    {
+      "a": 2013,
+      "b": 2013,
+      "axis": "year",
+      "bin": 0,
+      "metric": "injury",
+      "bandwidth": 75,
+      "kernel": "quartic",
+      "max_absolute_error": 4.0006793711189204e-10,
+      "lixels_checked": 1095,
+      "raw_counts": "exact",
+      "calendar_days": 365
+    },
+    {
+      "a": 2025,
+      "b": 2025,
+      "axis": "year",
+      "bin": 0,
+      "metric": "all",
+      "bandwidth": 100,
+      "kernel": "epanechnikov",
+      "max_absolute_error": 2.1324250004672862e-10,
+      "lixels_checked": 1095,
+      "raw_counts": "exact",
+      "calendar_days": 365
+    },
+    {
+      "a": 2013,
+      "b": 2019,
+      "axis": "hour",
+      "bin": 0,
+      "metric": "injury",
+      "bandwidth": 50,
+      "kernel": "quartic",
+      "max_absolute_error": 2.5918417477337197e-11,
+      "lixels_checked": 1095,
+      "raw_counts": "exact",
+      "calendar_days": 2556
+    },
+    {
+      "a": 2021,
+      "b": 2025,
+      "axis": "hour",
+      "bin": 16,
+      "metric": "injury",
+      "bandwidth": 75,
+      "kernel": "epanechnikov",
+      "max_absolute_error": 1.785526978007046e-11,
+      "lixels_checked": 1095,
+      "raw_counts": "exact",
+      "calendar_days": 1826
+    },
+    {
+      "a": 2022,
+      "b": 2025,
+      "axis": "month",
+      "bin": 8,
+      "metric": "injury",
+      "bandwidth": 75,
+      "kernel": "quartic",
+      "max_absolute_error": 4.044010959436406e-10,
+      "lixels_checked": 1095,
+      "raw_counts": "exact",
+      "calendar_days": 120
+    },
+    {
+      "a": 2013,
+      "b": 2025,
+      "axis": "month",
+      "bin": 1,
+      "metric": "all",
+      "bandwidth": 100,
+      "kernel": "quartic",
+      "max_absolute_error": 9.821377183749647e-10,
+      "lixels_checked": 1095,
+      "raw_counts": "exact",
+      "calendar_days": 367
+    }
+  ]
+}

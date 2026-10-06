@@ -1,0 +1,17 @@
+{
+  "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Streets/MapServer/4/query",
+  "query": {
+    "f": "json",
+    "where": "1=1",
+    "geometry": "-74.028,40.68,-73.905,40.82",
+    "geometryType": "esriGeometryEnvelope",
+    "inSR": 4326,
+    "spatialRel": "esriSpatialRelIntersects",
+    "returnIdsOnly": "true"
+  },
+  "output_srid": 26918,
+  "features": 27260,
+  "sha256": "65ae44af41ac425f23c2ffce2878b69f95bca4245a31b432c029121c425f24e4",
+  "file_completed_at": "2026-10-03T01:29:49.522594+00:00",
+  "role": "Cartographic background only; excluded from network analysis."
+}

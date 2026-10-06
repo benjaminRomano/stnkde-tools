@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": [
+    "Collision IDs unique; paginated count conserved",
+    "Raw annual and monthly counts conserve fixed-window events",
+    "Injury-crash annual/monthly counts agree",
+    "Every target retains zero-distance source contribution",
+    "Six bandwidth/kernel fields finite and nonnegative",
+    "Compact network cache fingerprint equals reconstructed graph",
+    "Complete calendar years only, 2013\u20132025"
+  ],
+  "graph_sha256": "345bed425079a226dcf09d8c4f3e8fdcdfa805ad36b73c4c5aab679f7c927daf",
+  "event_sha256": "30c136e048f4b70a7e538c31f9491f27c0ec6e28b4900edd466b13da220e1ab4",
+  "selected_lixels": 1095,
+  "source_lixels_within_100m": 1234,
+  "aggregate_rows": 18786
+}

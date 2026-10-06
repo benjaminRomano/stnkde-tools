@@ -1,0 +1,106 @@
+{
+  "source": "https://data.cityofnewyork.us/resource/h9gi-nx95.json",
+  "source_page": "https://data.cityofnewyork.us/Transportation/Motor-Vehicle-Collisions-Crashes/h9gi-nx95",
+  "retrieved_at": "2026-10-06T06:33:49.504788+00:00",
+  "latest_available": "2026-06-11T00:00:00.000",
+  "where": "borough='MANHATTAN' AND crash_date >= '2017-01-01T00:00:00' AND crash_date < '2027-01-01T00:00:00' AND crash_date <= '2026-06-11T00:00:00.000'",
+  "geography": "Manhattan borough label; same event geography as the approved poster",
+  "rows": 166308,
+  "sha256": "b506a8b4e78a0cc4e7db4628d2701c4bb218423ab29ce53a679b8d799051363d",
+  "annual_source_quality": [
+    {
+      "year": "2017",
+      "records": "31774",
+      "with_latitude": "30297",
+      "with_longitude": "30297",
+      "first": "2017-01-01T00:00:00.000",
+      "latest": "2017-12-31T00:00:00.000"
+    },
+    {
+      "year": "2018",
+      "records": "31412",
+      "with_latitude": "29783",
+      "with_longitude": "29783",
+      "first": "2018-01-01T00:00:00.000",
+      "latest": "2018-12-31T00:00:00.000"
+    },
+    {
+      "year": "2019",
+      "records": "26593",
+      "with_latitude": "25587",
+      "with_longitude": "25587",
+      "first": "2019-01-01T00:00:00.000",
+      "latest": "2019-12-31T00:00:00.000"
+    },
+    {
+      "year": "2020",
+      "records": "10855",
+      "with_latitude": "10484",
+      "with_longitude": "10484",
+      "first": "2020-01-01T00:00:00.000",
+      "latest": "2020-12-31T00:00:00.000"
+    },
+    {
+      "year": "2021",
+      "records": "11432",
+      "with_latitude": "11004",
+      "with_longitude": "11004",
+      "first": "2021-01-01T00:00:00.000",
+      "latest": "2021-12-31T00:00:00.000"
+    },
+    {
+      "year": "2022",
+      "records": "11988",
+      "with_latitude": "11567",
+      "with_longitude": "11567",
+      "first": "2022-01-01T00:00:00.000",
+      "latest": "2022-12-31T00:00:00.000"
+    },
+    {
+      "year": "2023",
+      "records": "11823",
+      "with_latitude": "11582",
+      "with_longitude": "11582",
+      "first": "2023-01-01T00:00:00.000",
+      "latest": "2023-12-31T00:00:00.000"
+    },
+    {
+      "year": "2024",
+      "records": "11903",
+      "with_latitude": "11733",
+      "with_longitude": "11733",
+      "first": "2024-01-01T00:00:00.000",
+      "latest": "2024-12-31T00:00:00.000"
+    },
+    {
+      "year": "2025",
+      "records": "13229",
+      "with_latitude": "13170",
+      "with_longitude": "13170",
+      "first": "2025-01-01T00:00:00.000",
+      "latest": "2025-12-31T00:00:00.000"
+    },
+    {
+      "year": "2026",
+      "records": "5299",
+      "with_latitude": "5287",
+      "with_longitude": "5287",
+      "first": "2026-01-01T00:00:00.000",
+      "latest": "2026-06-11T00:00:00.000"
+    }
+  ],
+  "quality_url": "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=date_extract_y%28crash_date%29+as+year%2Ccount%28%2A%29+as+records%2Ccount%28latitude%29+as+with_latitude%2Ccount%28longitude%29+as+with_longitude%2Cmin%28crash_date%29+as+first%2Cmax%28crash_date%29+as+latest&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272017-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272027-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27&%24group=year&%24order=year",
+  "page_urls": [
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Clatitude%2Clongitude%2Cborough&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272017-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272027-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+-1&%24order=collision_id&%24limit=20000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Clatitude%2Clongitude%2Cborough&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272017-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272027-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+3736030&%24order=collision_id&%24limit=20000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Clatitude%2Clongitude%2Cborough&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272017-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272027-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+3882640&%24order=collision_id&%24limit=20000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Clatitude%2Clongitude%2Cborough&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272017-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272027-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+4032248&%24order=collision_id&%24limit=20000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Clatitude%2Clongitude%2Cborough&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272017-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272027-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+4190830&%24order=collision_id&%24limit=20000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Clatitude%2Clongitude%2Cborough&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272017-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272027-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+4374130&%24order=collision_id&%24limit=20000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Clatitude%2Clongitude%2Cborough&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272017-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272027-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+4561270&%24order=collision_id&%24limit=20000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Clatitude%2Clongitude%2Cborough&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272017-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272027-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+4728014&%24order=collision_id&%24limit=20000",
+    "https://data.cityofnewyork.us/resource/h9gi-nx95.json?%24select=collision_id%2Ccrash_date%2Clatitude%2Clongitude%2Cborough&%24where=borough%3D%27MANHATTAN%27+AND+crash_date+%3E%3D+%272017-01-01T00%3A00%3A00%27+AND+crash_date+%3C+%272027-01-01T00%3A00%3A00%27+AND+crash_date+%3C%3D+%272026-06-11T00%3A00%3A00.000%27+AND+collision_id+%3E+4862713&%24order=collision_id&%24limit=20000"
+  ],
+  "source_notice": "<b>NOTE:</b> This dataset is temporarily not updating while its automated update process is being fixed. This fix is expected to be completed during the month of August.",
+  "year_2026_status": "partial; no annualization or missing-month imputation"
+}

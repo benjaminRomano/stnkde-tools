@@ -1,0 +1,240 @@
+{
+  "paper": {
+    "title": "Visualizing Traffic Accident Hotspots Based on Spatial-Temporal Network Kernel Density Estimation (Demo Paper)",
+    "authors": [
+      "Benjamin Romano",
+      "Zhe Jiang"
+    ],
+    "doi": "10.1145/3139958.3139981",
+    "reported_crashes_approx": 195000,
+    "lixel_length_m": 50,
+    "spatial_bandwidth_m": 100,
+    "annual_temporal_bandwidth": 1,
+    "hourly_temporal_bandwidth": 2
+  },
+  "sources": {
+    "retrieved_at": "2026-10-03T01:23:06.289092+00:00",
+    "historical_snapshot": false,
+    "paper_cutoff_assumption": "2017-04-30 inclusive; exact publication-day cutoff was not specified",
+    "crashes": {
+      "url": "https://data.cityofnewyork.us/resource/h9gi-nx95.json",
+      "where": "crash_date >= '2012-01-01T00:00:00' AND crash_date < '2017-05-01T00:00:00' AND borough='MANHATTAN'",
+      "rows": 192042
+    },
+    "roads": {
+      "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Streets/MapServer/4/query",
+      "where": "LeftCountyName='New York' OR RightCountyName='New York'",
+      "output_srid": 26918,
+      "features": 15755
+    },
+    "limitations": [
+      "Current records can contain retrospective edits.",
+      "Current road geometries differ from the missing 2017 shapefile.",
+      "Borough attribute replaces the unpublished QGIS crop."
+    ],
+    "files": {
+      "crashes.csv": {
+        "sha256": "314da18d6a8be9bb7fbcfd76dece501a868d710c84f7eab79b8bed5214e0c372",
+        "bytes": 13519164
+      },
+      "roads.json": {
+        "sha256": "b834fd48eba3cbfca2b1ae3182cc7054b7c4e4e66d724c6bd53e0b3fc10ac927",
+        "bytes": 6171763
+      }
+    },
+    "context_roads": {
+      "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Streets/MapServer/4/query",
+      "query": {
+        "f": "json",
+        "where": "1=1",
+        "geometry": "-74.028,40.68,-73.905,40.82",
+        "geometryType": "esriGeometryEnvelope",
+        "inSR": 4326,
+        "spatialRel": "esriSpatialRelIntersects",
+        "returnIdsOnly": "true"
+      },
+      "output_srid": 26918,
+      "features": 27260,
+      "sha256": "65ae44af41ac425f23c2ffce2878b69f95bca4245a31b432c029121c425f24e4",
+      "file_completed_at": "2026-10-03T01:29:49.522594+00:00",
+      "role": "Cartographic background only; excluded from network analysis."
+    }
+  },
+  "versions": {
+    "postgres": "PostgreSQL 18.3 (Debian 18.3-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+    "postgis": "POSTGIS=\"3.6.3 3d12666\" [EXTENSION] PGSQL=\"180\" GEOS=\"3.13.1-CAPI-1.19.2\" PROJ=\"9.6.0 NETWORK_ENABLED=OFF URL_ENDPOINT=https://cdn.proj.org USER_WRITABLE_DIRECTORY=/var/lib/postgresql/.local/share/proj DATABASE_PATH=/usr/share/proj/proj.db\" (compiled against PROJ 9.6.0) LIBXML=\"2.9.14\" LIBJSON=\"0.18\" LIBPROTOBUF=\"1.5.1\" WAGYU=\"0.5.0 (Internal)\" TOPOLOGY",
+    "pgrouting": "4.0.1"
+  },
+  "quality": {
+    "missing_coordinates": 4652,
+    "outside_study_region": 96,
+    "valid": 187294
+  },
+  "lixels": 34408,
+  "bridge_lixels": 1095,
+  "base_edges": 15758,
+  "assignment_changes": {
+    "different_lixel": 43820,
+    "rejected_over_100m": 13,
+    "maximum_nearest_distance_m": 5445.527478290479
+  },
+  "timings_seconds": {
+    "import_inputs": 0.0238,
+    "create_lixels": 0.0044,
+    "assign_events": 0.0008,
+    "network_distances": 0.3668,
+    "validate_routes": 0.0933,
+    "validate_repository_arithmetic": 0.0201,
+    "compute_density_stages": 0.7658,
+    "persist_results": 0.0072
+  },
+  "timing_note": "Resumable execution: completed database phases and matching graph caches are reused. These timings are not a cold-start whole-pipeline benchmark.",
+  "validation": {
+    "routes": {
+      "sources": 24,
+      "midpoint_distances": 279,
+      "max_error_m": 0.0,
+      "pgrouting_batch_seconds": 0.08904662495478988,
+      "scipy_batch_seconds": 0.0023210420040413737,
+      "scope": "same bounded driving-distance workload; excludes graph construction and import"
+    },
+    "repository_arithmetic": {
+      "sample_sources": 64,
+      "max_absolute_error": 6.938893903907228e-18,
+      "checks": "Original unmodified arixel worker, mocked neighbor retrieval, same graph distances, full 24-hour axis before output mask."
+    },
+    "analytical_tests": {
+      "passed": 8,
+      "log": "results/unit-tests.txt"
+    },
+    "database_integrity": {
+      "input_records_accounted_for": 192042,
+      "bbox_assignment_count": 187294,
+      "exact_assignment_count": 187294,
+      "lixel_lengths_valid": true,
+      "completed_runs": [
+        "hour-baseline",
+        "hour-corrected",
+        "hour-formula",
+        "hour-paper",
+        "year-baseline",
+        "year-corrected",
+        "year-formula",
+        "year-paper"
+      ],
+      "year-baseline": {
+        "persisted_cells": 25224,
+        "raw_counts_conserved": 187294
+      },
+      "year-formula": {
+        "persisted_cells": 25224,
+        "raw_counts_conserved": 187294
+      },
+      "year-corrected": {
+        "persisted_cells": 136457,
+        "raw_counts_conserved": 187281
+      },
+      "year-paper": {
+        "persisted_cells": 136457,
+        "raw_counts_conserved": 187281
+      },
+      "hour-baseline": {
+        "persisted_cells": 64883,
+        "raw_counts_conserved": 187294
+      },
+      "hour-formula": {
+        "persisted_cells": 64883,
+        "raw_counts_conserved": 187294
+      },
+      "hour-corrected": {
+        "persisted_cells": 539267,
+        "raw_counts_conserved": 187281
+      },
+      "hour-paper": {
+        "persisted_cells": 539267,
+        "raw_counts_conserved": 187281
+      },
+      "zero_count_smoothing_preserved": true,
+      "export_arrays_finite_nonnegative": true
+    }
+  },
+  "metrics": {
+    "year": {
+      "bins": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017
+      ],
+      "legacy_count": 187294,
+      "corrected_count": 187281,
+      "baseline_positive_cells": 25224,
+      "corrected_positive_cells": 136457,
+      "restored_positive_zero_count_cells": 111272,
+      "density_sum_change_percent": 166.2649789202411,
+      "sum_absolute_change": 7500.0162529083345,
+      "relative_l1_change_percent": 247.17685516442654,
+      "formula_only_change_on_original_cells_percent": -38.48716409979058,
+      "top_one_percent_overlap_percent": 24.9031007751938,
+      "note": "Sum of sampled cell densities is a comparison statistic, not a probability or an integrated network mass."
+    },
+    "hour": {
+      "bins": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "legacy_count": 187294,
+      "corrected_count": 187281,
+      "baseline_positive_cells": 64883,
+      "corrected_positive_cells": 539267,
+      "restored_positive_zero_count_cells": 474133,
+      "density_sum_change_percent": 278.95992140004256,
+      "sum_absolute_change": 9146.672273056478,
+      "relative_l1_change_percent": 343.22422759857204,
+      "formula_only_change_on_original_cells_percent": -46.520325666590324,
+      "top_one_percent_overlap_percent": 27.38282669250333,
+      "note": "Sum of sampled cell densities is a comparison statistic, not a probability or an integrated network mass."
+    }
+  },
+  "stage_definitions": {
+    "baseline": "Repository arithmetic, bounding-box assignment, original sparse output mask; reconstructed common graph.",
+    "formula": "Only the spatial argument is fixed; assignment, source-time handling, and output mask stay as baseline.",
+    "corrected": "Spatial argument, source-lixel temporal smoothing and explicit complete time axes fixed; exact nearest-edge assignment with explicit 100 m quality threshold; original Epanechnikov kernel retained. Complete density field retained separately from the intentional event-bearing-only display policy.",
+    "paper": "All correctness fixes plus true quartic/biweight kernels to match the paper prose; a separate modeling change."
+  },
+  "limitations": [
+    "No original 2017 shapefiles, QGIS project, camera, or classification breaks were supplied.",
+    "Current historical records and current NYS roads are used.",
+    "The paper end date is approximated as April 30, 2017.",
+    "Current Manhattan roads contain many more separate features than the approximately 900 reported in the paper.",
+    "Common graph uses deterministic planar noding on a 1 m precision grid, not the original order-sensitive topology insertion and 5 m splitting tolerance.",
+    "Planar connectivity does not model grade-separated crossings, as in the original pipeline.",
+    "Original bounding-box ties were unspecified; this baseline resolves ties by lixel ID.",
+    "The paper did not specify planar KDE bandwidth or color-class breaks; their reconstruction is separately documented.",
+    "Partial 2012 and 2017 coverage means raw annual values are not exposure-adjusted crash rates."
+  ]
+}

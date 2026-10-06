@@ -1,0 +1,376 @@
+{
+  "contract": {
+    "question": "How does recorded collision concentration vary from 2017 to 2026?",
+    "family": "geospatial annual small multiples",
+    "renderer": "Matplotlib, approved poster body",
+    "scale": {
+      "method": "log1p",
+      "minimum": 0,
+      "maximum": 0.8694856649167154,
+      "shared_across_all_years_and_modes": true
+    },
+    "framing": "02 Closer Manhattan, 1.15x",
+    "extent_m": [
+      582840.9008186018,
+      4505836.998147146,
+      588719.5783999608,
+      4514663.001852854
+    ],
+    "palette": [
+      "#1d70ad",
+      "#36a3b8",
+      "#ffd84a",
+      "#ff7d24",
+      "#e51e26"
+    ],
+    "years": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "source": "https://data.cityofnewyork.us/resource/h9gi-nx95.json",
+    "latest_available": "2026-06-11",
+    "data_grain": "50 m lixels; annual assigned crash counts smoothed at 100 m on a fixed network",
+    "temporal_smoothing": false,
+    "2026_annualized": false,
+    "secondary_comparison": "Jan 1\u2013Jun 11 in every year"
+  },
+  "source_sha256": "b506a8b4e78a0cc4e7db4628d2701c4bb218423ab29ce53a679b8d799051363d",
+  "graph_sha256": "345bed425079a226dcf09d8c4f3e8fdcdfa805ad36b73c4c5aab679f7c927daf",
+  "quality": {
+    "2017": {
+      "records": 31774,
+      "missing_or_invalid_coordinates": 1477,
+      "outside_input_region": 34,
+      "valid_coordinates_in_region": 30263,
+      "rejected_over_100m": 5,
+      "accepted": 30258,
+      "accepted_same_period": 13302
+    },
+    "2018": {
+      "records": 31412,
+      "missing_or_invalid_coordinates": 1629,
+      "outside_input_region": 80,
+      "valid_coordinates_in_region": 29703,
+      "rejected_over_100m": 13,
+      "accepted": 29690,
+      "accepted_same_period": 13010
+    },
+    "2019": {
+      "records": 26593,
+      "missing_or_invalid_coordinates": 1006,
+      "outside_input_region": 41,
+      "valid_coordinates_in_region": 25546,
+      "rejected_over_100m": 0,
+      "accepted": 25546,
+      "accepted_same_period": 11385
+    },
+    "2020": {
+      "records": 10855,
+      "missing_or_invalid_coordinates": 371,
+      "outside_input_region": 17,
+      "valid_coordinates_in_region": 10467,
+      "rejected_over_100m": 1,
+      "accepted": 10466,
+      "accepted_same_period": 5141
+    },
+    "2021": {
+      "records": 11432,
+      "missing_or_invalid_coordinates": 428,
+      "outside_input_region": 92,
+      "valid_coordinates_in_region": 10912,
+      "rejected_over_100m": 0,
+      "accepted": 10912,
+      "accepted_same_period": 4110
+    },
+    "2022": {
+      "records": 11988,
+      "missing_or_invalid_coordinates": 421,
+      "outside_input_region": 239,
+      "valid_coordinates_in_region": 11328,
+      "rejected_over_100m": 1,
+      "accepted": 11327,
+      "accepted_same_period": 4771
+    },
+    "2023": {
+      "records": 11823,
+      "missing_or_invalid_coordinates": 241,
+      "outside_input_region": 47,
+      "valid_coordinates_in_region": 11535,
+      "rejected_over_100m": 0,
+      "accepted": 11535,
+      "accepted_same_period": 4879
+    },
+    "2024": {
+      "records": 11903,
+      "missing_or_invalid_coordinates": 170,
+      "outside_input_region": 90,
+      "valid_coordinates_in_region": 11643,
+      "rejected_over_100m": 0,
+      "accepted": 11643,
+      "accepted_same_period": 4757
+    },
+    "2025": {
+      "records": 13229,
+      "missing_or_invalid_coordinates": 59,
+      "outside_input_region": 501,
+      "valid_coordinates_in_region": 12669,
+      "rejected_over_100m": 0,
+      "accepted": 12669,
+      "accepted_same_period": 5382
+    },
+    "2026": {
+      "records": 5299,
+      "missing_or_invalid_coordinates": 12,
+      "outside_input_region": 199,
+      "valid_coordinates_in_region": 5088,
+      "rejected_over_100m": 0,
+      "accepted": 5088,
+      "accepted_same_period": 5088
+    }
+  },
+  "panels": [
+    {
+      "mode": "annual",
+      "year": 2017,
+      "file": "annual-2017.png",
+      "accepted_source_crashes": 30258,
+      "visible_positive_segments": 14077,
+      "maximum_visible_density": 0.7525057153620822,
+      "coverage": "complete calendar year",
+      "annualized": false,
+      "footer": "New York City Open Data, 2017"
+    },
+    {
+      "mode": "annual",
+      "year": 2018,
+      "file": "annual-2018.png",
+      "accepted_source_crashes": 29690,
+      "visible_positive_segments": 14014,
+      "maximum_visible_density": 0.8694856649167154,
+      "coverage": "complete calendar year",
+      "annualized": false,
+      "footer": "New York City Open Data, 2018"
+    },
+    {
+      "mode": "annual",
+      "year": 2019,
+      "file": "annual-2019.png",
+      "accepted_source_crashes": 25546,
+      "visible_positive_segments": 14116,
+      "maximum_visible_density": 0.6930609763903732,
+      "coverage": "complete calendar year",
+      "annualized": false,
+      "footer": "New York City Open Data, 2019"
+    },
+    {
+      "mode": "annual",
+      "year": 2020,
+      "file": "annual-2020.png",
+      "accepted_source_crashes": 10466,
+      "visible_positive_segments": 13147,
+      "maximum_visible_density": 0.21638856664471975,
+      "coverage": "complete calendar year",
+      "annualized": false,
+      "footer": "New York City Open Data, 2020"
+    },
+    {
+      "mode": "annual",
+      "year": 2021,
+      "file": "annual-2021.png",
+      "accepted_source_crashes": 10912,
+      "visible_positive_segments": 13744,
+      "maximum_visible_density": 0.2088498286126314,
+      "coverage": "complete calendar year",
+      "annualized": false,
+      "footer": "New York City Open Data, 2021"
+    },
+    {
+      "mode": "annual",
+      "year": 2022,
+      "file": "annual-2022.png",
+      "accepted_source_crashes": 11327,
+      "visible_positive_segments": 13838,
+      "maximum_visible_density": 0.3038446162163872,
+      "coverage": "complete calendar year",
+      "annualized": false,
+      "footer": "New York City Open Data, 2022"
+    },
+    {
+      "mode": "annual",
+      "year": 2023,
+      "file": "annual-2023.png",
+      "accepted_source_crashes": 11535,
+      "visible_positive_segments": 13863,
+      "maximum_visible_density": 0.3039619796399454,
+      "coverage": "complete calendar year",
+      "annualized": false,
+      "footer": "New York City Open Data, 2023"
+    },
+    {
+      "mode": "annual",
+      "year": 2024,
+      "file": "annual-2024.png",
+      "accepted_source_crashes": 11643,
+      "visible_positive_segments": 13888,
+      "maximum_visible_density": 0.2483205446772185,
+      "coverage": "complete calendar year",
+      "annualized": false,
+      "footer": "New York City Open Data, 2024"
+    },
+    {
+      "mode": "annual",
+      "year": 2025,
+      "file": "annual-2025.png",
+      "accepted_source_crashes": 12669,
+      "visible_positive_segments": 14024,
+      "maximum_visible_density": 0.1835351548956275,
+      "coverage": "complete calendar year",
+      "annualized": false,
+      "footer": "New York City Open Data, 2025"
+    },
+    {
+      "mode": "annual",
+      "year": 2026,
+      "file": "annual-2026.png",
+      "accepted_source_crashes": 5088,
+      "visible_positive_segments": 11638,
+      "maximum_visible_density": 0.0953569997485707,
+      "coverage": "partial",
+      "annualized": false,
+      "footer": "New York City Open Data, 2026 \u00b7 through Jun 11"
+    },
+    {
+      "mode": "same-period",
+      "year": 2017,
+      "file": "same-period-2017.png",
+      "accepted_source_crashes": 13302,
+      "visible_positive_segments": 13299,
+      "maximum_visible_density": 0.3864883720054574,
+      "coverage": "matched calendar period",
+      "annualized": false,
+      "footer": "New York City Open Data, 2017 \u00b7 Jan 1\u2013Jun 11"
+    },
+    {
+      "mode": "same-period",
+      "year": 2018,
+      "file": "same-period-2018.png",
+      "accepted_source_crashes": 13010,
+      "visible_positive_segments": 13070,
+      "maximum_visible_density": 0.45055819218580806,
+      "coverage": "matched calendar period",
+      "annualized": false,
+      "footer": "New York City Open Data, 2018 \u00b7 Jan 1\u2013Jun 11"
+    },
+    {
+      "mode": "same-period",
+      "year": 2019,
+      "file": "same-period-2019.png",
+      "accepted_source_crashes": 11385,
+      "visible_positive_segments": 13145,
+      "maximum_visible_density": 0.3990898054064132,
+      "coverage": "matched calendar period",
+      "annualized": false,
+      "footer": "New York City Open Data, 2019 \u00b7 Jan 1\u2013Jun 11"
+    },
+    {
+      "mode": "same-period",
+      "year": 2020,
+      "file": "same-period-2020.png",
+      "accepted_source_crashes": 5141,
+      "visible_positive_segments": 11432,
+      "maximum_visible_density": 0.13929846387383077,
+      "coverage": "matched calendar period",
+      "annualized": false,
+      "footer": "New York City Open Data, 2020 \u00b7 Jan 1\u2013Jun 11"
+    },
+    {
+      "mode": "same-period",
+      "year": 2021,
+      "file": "same-period-2021.png",
+      "accepted_source_crashes": 4110,
+      "visible_positive_segments": 10704,
+      "maximum_visible_density": 0.10535496879114054,
+      "coverage": "matched calendar period",
+      "annualized": false,
+      "footer": "New York City Open Data, 2021 \u00b7 Jan 1\u2013Jun 11"
+    },
+    {
+      "mode": "same-period",
+      "year": 2022,
+      "file": "same-period-2022.png",
+      "accepted_source_crashes": 4771,
+      "visible_positive_segments": 11639,
+      "maximum_visible_density": 0.1446160618260165,
+      "coverage": "matched calendar period",
+      "annualized": false,
+      "footer": "New York City Open Data, 2022 \u00b7 Jan 1\u2013Jun 11"
+    },
+    {
+      "mode": "same-period",
+      "year": 2023,
+      "file": "same-period-2023.png",
+      "accepted_source_crashes": 4879,
+      "visible_positive_segments": 11583,
+      "maximum_visible_density": 0.1478784131309205,
+      "coverage": "matched calendar period",
+      "annualized": false,
+      "footer": "New York City Open Data, 2023 \u00b7 Jan 1\u2013Jun 11"
+    },
+    {
+      "mode": "same-period",
+      "year": 2024,
+      "file": "same-period-2024.png",
+      "accepted_source_crashes": 4757,
+      "visible_positive_segments": 11670,
+      "maximum_visible_density": 0.1135662110155087,
+      "coverage": "matched calendar period",
+      "annualized": false,
+      "footer": "New York City Open Data, 2024 \u00b7 Jan 1\u2013Jun 11"
+    },
+    {
+      "mode": "same-period",
+      "year": 2025,
+      "file": "same-period-2025.png",
+      "accepted_source_crashes": 5382,
+      "visible_positive_segments": 11977,
+      "maximum_visible_density": 0.09504843749998404,
+      "coverage": "matched calendar period",
+      "annualized": false,
+      "footer": "New York City Open Data, 2025 \u00b7 Jan 1\u2013Jun 11"
+    },
+    {
+      "mode": "same-period",
+      "year": 2026,
+      "file": "same-period-2026.png",
+      "accepted_source_crashes": 5088,
+      "visible_positive_segments": 11638,
+      "maximum_visible_density": 0.0953569997485707,
+      "coverage": "matched calendar period",
+      "annualized": false,
+      "footer": "New York City Open Data, 2026 \u00b7 Jan 1\u2013Jun 11"
+    }
+  ],
+  "preserved_files": {
+    "session/work/poster/final/render_restored_colors.py": "5f35f39b9f3da6c6ed687042fe4a5d156588f7801b472c19e7a1fc676882fd2d",
+    "session/outputs/New-York-City-Traffic-Collisions-Final.png": "8ee3b29057062469e179b30e8e33b382a9e2460d5e1793fd7a6c64da8701ef5f",
+    "session/outputs/reproduction/report.html": "d67943861d7c87d9268b52ad6e3a38fb9d05c8c4b4b221e1f6ab744be53e807d"
+  },
+  "qa": {
+    "source_count_conserved": true,
+    "accepted_counts_conserved": true,
+    "fixed_scale_all_panels": true,
+    "density_fields_finite_nonnegative": true,
+    "partial_2026_equals_same_period_2026": true,
+    "no_cross_year_smoothing": true,
+    "no_annualization": true,
+    "poster_masthead_and_legend_preserved": true
+  }
+}

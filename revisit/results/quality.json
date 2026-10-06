@@ -1,0 +1,106 @@
+{
+  "downloaded_records": 28226,
+  "inside_records": 17325,
+  "unique_ids": 28226,
+  "missing_fields_inside": {},
+  "invalid_inside": {},
+  "assignment_rejections": {
+    "buffer": 410,
+    "inside": 0
+  },
+  "annual_quality": [
+    {
+      "year": 2013,
+      "local_records": 2022,
+      "null_borough": 245,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2014,
+      "local_records": 2076,
+      "null_borough": 253,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2015,
+      "local_records": 2096,
+      "null_borough": 263,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2016,
+      "local_records": 1863,
+      "null_borough": 584,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2017,
+      "local_records": 2191,
+      "null_borough": 1078,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2018,
+      "local_records": 2109,
+      "null_borough": 892,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2019,
+      "local_records": 1621,
+      "null_borough": 563,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2020,
+      "local_records": 673,
+      "null_borough": 280,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2021,
+      "local_records": 624,
+      "null_borough": 228,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2022,
+      "local_records": 566,
+      "null_borough": 192,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2023,
+      "local_records": 542,
+      "null_borough": 136,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2024,
+      "local_records": 469,
+      "null_borough": 107,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    },
+    {
+      "year": 2025,
+      "local_records": 473,
+      "null_borough": 102,
+      "rejected_over_100m": 0,
+      "missing_injury": 0
+    }
+  ],
+  "unlocatable_records": "Records without valid coordinates cannot be assigned to this rectangle; they are not included. Manhattan-wide coordinate completeness is context only.",
+  "fatality_warning": "Fatality fields are complete in this local extract but remain preliminary. Do not use this extract as official fatality totals."
+}

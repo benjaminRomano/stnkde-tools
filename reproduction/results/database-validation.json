@@ -1,0 +1,50 @@
+{
+  "input_records_accounted_for": 192042,
+  "bbox_assignment_count": 187294,
+  "exact_assignment_count": 187294,
+  "lixel_lengths_valid": true,
+  "completed_runs": [
+    "hour-baseline",
+    "hour-corrected",
+    "hour-formula",
+    "hour-paper",
+    "year-baseline",
+    "year-corrected",
+    "year-formula",
+    "year-paper"
+  ],
+  "year-baseline": {
+    "persisted_cells": 25224,
+    "raw_counts_conserved": 187294
+  },
+  "year-formula": {
+    "persisted_cells": 25224,
+    "raw_counts_conserved": 187294
+  },
+  "year-corrected": {
+    "persisted_cells": 136457,
+    "raw_counts_conserved": 187281
+  },
+  "year-paper": {
+    "persisted_cells": 136457,
+    "raw_counts_conserved": 187281
+  },
+  "hour-baseline": {
+    "persisted_cells": 64883,
+    "raw_counts_conserved": 187294
+  },
+  "hour-formula": {
+    "persisted_cells": 64883,
+    "raw_counts_conserved": 187294
+  },
+  "hour-corrected": {
+    "persisted_cells": 539267,
+    "raw_counts_conserved": 187281
+  },
+  "hour-paper": {
+    "persisted_cells": 539267,
+    "raw_counts_conserved": 187281
+  },
+  "zero_count_smoothing_preserved": true,
+  "export_arrays_finite_nonnegative": true
+}

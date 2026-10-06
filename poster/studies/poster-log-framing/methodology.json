@@ -1,0 +1,145 @@
+{
+  "scale": {
+    "method": "log1p",
+    "minimum": 0,
+    "maximum": 5.60221994929095,
+    "recomputed_per_crop": false
+  },
+  "palette": [
+    "#1d70ad",
+    "#36a3b8",
+    "#ffd84a",
+    "#ff7d24",
+    "#e51e26"
+  ],
+  "corrected_values_sha256": "f4748de6e0ffabd55bc8f52b7dff8acf96263d7f4e30ec1e578f01c50093762a",
+  "poster_map_bounds": [
+    0.04,
+    0.05,
+    0.92,
+    0.85
+  ],
+  "options": [
+    {
+      "slug": "01-current",
+      "title": "Current composition",
+      "description": "1.00\u00d7 \u00b7 Original logarithmic view.",
+      "zoom": 1.0,
+      "extent_m": [
+        582700.0,
+        4505475.047869218,
+        589460.4792185627,
+        4515624.952130782
+      ],
+      "visible_positive_segments": 16534,
+      "bridge_approach_fraction": [
+        0.7145790474740703,
+        0.6942403725054911
+      ],
+      "poster_copy_and_frame_pixel_identical": true
+    },
+    {
+      "slug": "02-manhattan",
+      "title": "Closer \u00b7 Manhattan",
+      "description": "1.15\u00d7 \u00b7 Keeps Lower Manhattan; crops more of Queens.",
+      "zoom": 1.15,
+      "extent_m": [
+        582840.9008186018,
+        4505836.998147146,
+        588719.5783999608,
+        4514663.001852854
+      ],
+      "visible_positive_segments": 15007,
+      "bridge_approach_fraction": [
+        0.7977977898870932,
+        0.7573668967748445
+      ],
+      "poster_copy_and_frame_pixel_identical": true
+    },
+    {
+      "slug": "03-queens",
+      "title": "Closer \u00b7 Queens",
+      "description": "1.15\u00d7 \u00b7 Moves the bridge left; retains more Queens than 02.",
+      "zoom": 1.15,
+      "extent_m": [
+        583390.9008186018,
+        4506336.998147146,
+        589269.5783999608,
+        4515163.001852854
+      ],
+      "visible_positive_segments": 15242,
+      "bridge_approach_fraction": [
+        0.7042393335186015,
+        0.7007161161189719
+      ],
+      "poster_copy_and_frame_pixel_identical": true
+    },
+    {
+      "slug": "04-midtown",
+      "title": "Midtown & Queens",
+      "description": "1.35\u00d7 \u00b7 Larger streets with the bridge and Queens in view.",
+      "zoom": 1.35,
+      "extent_m": [
+        584196.1188079397,
+        4508040.77619942,
+        589203.8811920603,
+        4515559.22380058
+      ],
+      "visible_positive_segments": 11318,
+      "bridge_approach_fraction": [
+        0.6659217703906098,
+        0.5959667770445193
+      ],
+      "poster_copy_and_frame_pixel_identical": true
+    },
+    {
+      "slug": "05-bridge",
+      "title": "Bridge corridor",
+      "description": "1.65\u00d7 \u00b7 Focuses on Midtown, the bridge, and western Queens.",
+      "zoom": 1.65,
+      "extent_m": [
+        585072.5407209914,
+        4508707.617765164,
+        589169.8008534537,
+        4514859.074893385
+      ],
+      "visible_positive_segments": 7258,
+      "bridge_approach_fraction": [
+        0.6,
+        0.6200000000000484
+      ],
+      "poster_copy_and_frame_pixel_identical": true
+    },
+    {
+      "slug": "06-approach",
+      "title": "Bridge approach",
+      "description": "2.25\u00d7 \u00b7 Closest view; Lower Manhattan and the northern streets are cropped.",
+      "zoom": 2.25,
+      "extent_m": [
+        585878.335213709,
+        4509814.880048244,
+        588882.9926441814,
+        4514325.94860894
+      ],
+      "visible_positive_segments": 4024,
+      "bridge_approach_fraction": [
+        0.5499999999999923,
+        0.6
+      ],
+      "poster_copy_and_frame_pixel_identical": true
+    }
+  ],
+  "preserved_files": {
+    "session/work/poster/final/render_restored_colors.py": "5f35f39b9f3da6c6ed687042fe4a5d156588f7801b472c19e7a1fc676882fd2d",
+    "session/outputs/poster-color-scales/04-logarithmic.png": "f7324b09546fed9cc9163c44567681b9a1bd6e5bcc6d81bf228b67f81c05d1d0",
+    "session/outputs/New-York-City-Traffic-Collisions-Final.png": "8ee3b29057062469e179b30e8e33b382a9e2460d5e1793fd7a6c64da8701ef5f",
+    "session/outputs/reproduction/report.html": "d67943861d7c87d9268b52ad6e3a38fb9d05c8c4b4b221e1f6ab744be53e807d"
+  },
+  "qa": {
+    "reference_option_pixel_identical": true,
+    "all_poster_copy_and_frame_pixel_identical": true,
+    "same_color_for_same_density": true,
+    "map_aspect_preserved": true,
+    "bridge_approach_visible_in_all_options": true
+  }
+}

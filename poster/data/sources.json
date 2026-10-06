@@ -1,0 +1,12 @@
+{
+  "file": "poster-inputs.npz",
+  "sha256": "0e04c542e89f83ce0781438e88922f8b9e30ead496a48c75a8bdba8738487eeb",
+  "graph_sha256": "345bed425079a226dcf09d8c4f3e8fdcdfa805ad36b73c4c5aab679f7c927daf",
+  "lixels": 34408,
+  "accepted_crashes": 187281,
+  "crs": "EPSG:26918",
+  "observation_window": "2012-07 through 2017-04-30",
+  "inputs": "reproduction/data/sources.json",
+  "assignment": "exact nearest, accepted within 100 meters; ID tie break",
+  "provenance": "Exported from repro.lixel and exact accepted repro.assignment; reference_density from reproduction/results/densities.npz"
+}

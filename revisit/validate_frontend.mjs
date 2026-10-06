@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import {computeField,kernel} from './site/compute-field.mjs';
+const root=fileURLToPath(new URL('.',import.meta.url));
+const data=JSON.parse(fs.readFileSync(root+'results/explorer.json'));
+const fixtures=JSON.parse(fs.readFileSync(root+'results/frontend-golden.json'));
+const cases=fixtures.map(f=>{const c=f.config,got=computeField(data,c,c.a,c.b,c.axis,c.bin);
+ const error=Math.max(...got.values.map((v,i)=>Math.abs(v-f.values[i])));
+ if(error>1e-8||got.den!==f.den||got.raw.some((v,i)=>v!==f.raw[i]))throw new Error(JSON.stringify({c,error}));
+ return {...c,max_absolute_error:error,lixels_checked:got.values.length,raw_counts:'exact',calendar_days:got.den};});
+if(kernel(75,75,'quartic')!==0||kernel(0,75,'quartic')!==.9375)throw new Error('support');
+const receipt={status:'passed',method:'Actual shipped pure JS estimator compared against independent direct frozen-CSV event sums, PostGIS exact assignments and unrounded SciPy graph distances. JSON distance rounding tolerance 1e-8.',cases};
+fs.writeFileSync(root+'results/frontend-numerical-validation.json',JSON.stringify(receipt,null,2));
+console.log(JSON.stringify(receipt,null,2));

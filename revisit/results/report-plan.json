@@ -1,0 +1,25 @@
+{
+  "audience": "product stakeholders / government officials and interested residents",
+  "delivery": "portable HTML inside the requested Report tab",
+  "structure": {
+    "Title": "title",
+    "Executive Summary": "summary",
+    "Key findings with visual evidence": "ledger/map-story/afternoon/season/covid-story/laws",
+    "Recommended next steps": "next",
+    "Further questions": "questions",
+    "Caveats and assumptions": "limits plus caveats adjacent to claims"
+  },
+  "chart_map": {
+    "injury-trend": "annual burden and non-monotonicity",
+    "hour-pattern": "timing and recovery sensitivity",
+    "month-pattern": "seasonal day normalization",
+    "total-trend": "2020 reporting/pandemic break"
+  },
+  "custom_network_maps": "SVG maps are used because road network geometry is outside native ordinary-chart families. Their formulas use the checked compact input.",
+  "omitted": [
+    "Exposure-adjusted crash rates: no aligned road-specific denominator",
+    "Causal policy attribution: no treatment/control design",
+    "Fatality trends: rare and preliminary",
+    "Claim of historical graph fidelity: original topology unavailable"
+  ]
+}
